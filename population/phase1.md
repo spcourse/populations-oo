@@ -19,7 +19,7 @@ We're not doing mathematics, but computer programming. So what we will do is sim
 
 The simulation below shows the interaction between rabbits (blue) and foxes (red). They can both reproduce if they meet a creature of the same species. And the foxes can grow hungry, if they eat a rabbit, they can continue for longer. If they can't find a rabbit to eat they will eventually die.
 
-<img src="./population/gifs/phase9.gif" width = "60%" />
+![embed](gifs/phase9.gif)
 
 
 
