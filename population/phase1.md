@@ -100,7 +100,7 @@ The great thing of using classes is that we can make multiple instances of a spe
 
 After your changes the UML should look like this:
 
-![](./mls/oo-phase2.png)
+![](./umls/oo-phase2.png)
 
 The fact that `Experiment` can contain any number of rabbits is indicated by the `*` near the `Rabbit` class on the aggregation line. In the UML everything that is bold is new (and is up to you to implement). So here you'll have to add the method `add_rabbits()`. Everything in italic is not new, but you will have to modify to make things work.
 
