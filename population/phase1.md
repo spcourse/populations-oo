@@ -107,6 +107,7 @@ The fact that `Experiment` can contain any number of rabbits is indicated by the
 ### Specification
 
 For this phase you have to *modify* the class `Experiment` as follows:
+
 * *modify* instance variable `rabbit` (of type `Rabbit`) to `rabbits` (of type `List`).
 * **add** method `add_rabbits(number_of_rabbits)` that creates a list of rabbits with random locations and angles and adds them to the instance variable `rabbits`.
 * *modify* `__init__(number_of_rabbits)` to accept the new parameter `number_of_rabbits` and use `add_rabbits()`. (From here on the `Rabbit` objects will be created *inside* the `Experiment` object. We don't have to do this in the main code anymore like we did in Phase 1.)
