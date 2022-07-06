@@ -23,12 +23,12 @@ The simulation below shows the interaction between rabbits (blue) and foxes (red
 
 As you see the foxes in this simulation use up all their resources (rabbits), which lead to the collapse of their ecosystem and eventually their own demise. You're going to find out if this can be prevented.
 
-The simulation has a lot of moving (harr) parts. And is to complex to build in one go. In such cases it is good practice to start out with simple and gradually build it out to the desired result.
+The simulation has a lot of moving (harr) parts. And is too complex to build in one go. In such cases it is good practice to start out with something simple and gradually build it out to the desired result.
 
-For the first part of this module we will specify exactly how to make an increasingly complex class structure in 9 phases. This might seem a bit restrictive, but it is a good way to learn how you can build complex object oriented projects.
+For the first part of this module we will specify exactly how to make an increasingly complex class structure in 9 phases. This might feel a bit restrictive, but it is a good way to learn how you can build complex object oriented projects.
 
 ## Phase 1: Rabbit
-Start by download the file `phase1.py`. This will be the starting point for this assignment.
+Start by download the file [phase1.py](phase1.py). This will be the starting point for this assignment.
 
 ### Goal
 Lets start out by having a single rabbit move over the screen. Like in the example below.
@@ -51,7 +51,7 @@ This would show the moving blue dot (the rabbit), where it not that you still ha
 
 ![](./umls/oo-phase1.png)
 
-In this diagram you see that an object of the class `Experiment` contains exactly one object of the class `Rabbit`. This is shown by the line that starts with the diamond shape and has the `1` written next to the `Rabbit` class. The diamond shape denotes aggregation (i.e., "contains") and the number denotes how many. So this translates to: "an experiment contains one rabbit".
+In this diagram you see that an object of the class `Experiment` contains exactly one object of the class `Rabbit`. This is shown by the line that starts with the diamond shape (⬦---) and has the `1` written next to the `Rabbit` class. The diamond shape denotes aggregation (i.e., "contains") and the number denotes how many. So this translates to: "an experiment contains one rabbit".
 
 The UML diagram also shows the methods and instance variables that the classes have. Everything that is written in bold, is up to you to implement.
 
@@ -151,6 +151,7 @@ You see that the class `Experiment` can contain any number of instances of `Fox`
 ### Specification
 
 For the class `Fox`:
+
 * **add** class `Fox`. For now, it has the same properties as the `Rabbit`, only the speed and color have different values.
 * **add** instance variables `pos_x`, `pos_y`.
 * **add** instance variable `angle`.
@@ -160,6 +161,7 @@ For the class `Fox`:
 * **add** method `step()`. The steps are the same as for `Rabbit` only the change of angle is less abrupt: the angle has a 20% change of changing by a random value between $$-\pi/4$$ and $$\pi/4$$
 
 For the class `Experiment`:
+
 * *change* instance variable `rabbits` to `creatures`. This list will now contain both foxes and rabbits.
 * **add** `add_foxes(number_of_foxes)` this should add foxes to the list of creatures.
 * *modify* `__init__(number_of_rabbits, number_of_foxes)`. The method should now get an additional parameter for the amount of foxes. And it should call the method `add_foxes()`.
@@ -186,6 +188,7 @@ Notice that class inheritance is indicated by the arrows. So `Fox` and `Rabbit` 
 ### Specification
 
 Create a new class called `Creature`. For this class:
+
 * **add** instance variables `pos_x`, `pos_y`.
 * **add** instance variable `angle`.
 * **add** instance variable `speed`. Creatures get the default speed $$0.01$$.
@@ -194,6 +197,7 @@ Create a new class called `Creature`. For this class:
 * **add** method `step()`. This method should only define the step based on the current angle, position and speed. It should not define the change of angle as that part is defined in the `step()` methods of the subclasses `Rabbit` and `Fox`
 
 Modify the `Fox` class. You can remove a lot of code and inherit it from `Creature`.
+
 * *modify* class `Fox`. The class definition should now be changed to inherit from `Creature`.
 * *modify* method `__init__(pos_x, pos_y, angle)` to call the `__init__()` method from the super class (using `super()`). After this you should still specify `speed` and `color` in this class as those properties are particular to `Fox`.
 * *modify* method `step()` to call the same method from the super class. Only the modification of the angle should remain in this class (as the logic for changing angles is particular to the `Fox` class).
