@@ -7,7 +7,7 @@ We want to know how a population of foxes and rabbits interact with each other. 
 A famous mathematical description of the interactions in the predator-prey model are the [Lotka-Volterra equations](https://en.wikipedia.org/wiki/Lotka–Volterra_equations). It is not important for you to know or understand these equations for this assignment. But if you're curious, here they are:
 
 $$
-\frac{dx}{dt} = \alpha x - \beta x y, \\
+\frac{dx}{dt} = \alpha x - \beta x y \\
 \frac{dy}{dt} = \delta x y - \gamma y
 $$
 
@@ -19,7 +19,9 @@ We're not doing mathematics, but computer programming. So what we will do is sim
 
 The simulation below shows the interaction between rabbits (blue) and foxes (red). They can both reproduce if they meet a creature of the same species. And the foxes can grow hungry, if they eat a rabbit, they can continue for longer. If they can't find a rabbit to eat they will eventually die.
 
-<img src="gifs/phase9.gif" width = "60%" />
+<img src="./gifs/phase9.gif" width = "60%" />
+
+https://sp2.mprog.nl/populations-oo/gifs/phase9.gif
 
 As you see the foxes in this simulation use up all their resources (rabbits), which lead to the collapse of their ecosystem and eventually their own demise. You're going to find out if this can be prevented.
 
