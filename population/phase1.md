@@ -20,7 +20,7 @@ We're not doing mathematics, but computer programming. So what we will do is sim
 
 The simulation below shows the interaction between rabbits (blue) and foxes (red). They can both reproduce if they meet a creature of the same species. And the foxes can grow hungry, if they eat a rabbit, they can continue for longer. If they can't find a rabbit to eat they will eventually die.
 
-![](./gifs/phase9.gif)
+![](./gifs/phase9.gif){: width="80%"}
 
 As you see the foxes in this simulation use up all their resources (rabbits), which lead to the collapse of their ecosystem and eventually their own demise. You're going to find out if this can be prevented.
 
@@ -45,7 +45,7 @@ Start by downloading the file [phase1.py](phase1.py). This will be the starting 
 ### Goal
 Lets start out by having a single rabbit move over the screen. Like in the example below.
 
-![](./gifs/phase1.gif)
+![](./gifs/phase1.gif){: width="60%"}
 
 The blue dot represents a rabbit and it follows a straight path at a certain angle. When it hits the border it turns a 180 degrees around.
 
@@ -64,7 +64,7 @@ This would show the moving blue dot (the rabbit), were it not that you still hav
 > TODO: verwijder size attribute van alle uml's
 draw() in uml cursief.
 
-![](./umls/oo-phase1.png)
+![](./umls/oo-phase1.png){: width="40%"}
 
 In this diagram you see that an object of the class `Experiment` contains exactly one object of the class `Rabbit`. This is shown by the line that starts with the diamond shape (⬦---) and has the `1` written next to the `Rabbit` class. The diamond shape denotes aggregation (i.e., "contains") and the number denotes how many. So this translates to: "an experiment contains one rabbit".
 
