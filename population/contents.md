@@ -102,17 +102,21 @@ You also have to implement is the class `Rabbit`:
 * **add** method `__init__(pos_x, pos_y, angle)`: This method is automatically called when creating a new `Rabbit` object. When creating a new `Rabbit` object, you have to provide the position and angle. The method should assign those to the appropriate attributes. The init should also set the values for `speed` and `color`.
 * **add** method `step()`: Run a single step of the simulation. This should update the position of the rabbit.
     The rate of change ($$dx$$ and $$dy$$) is given by the formulas:
+
     $$\begin{align*}
     dx &= \textrm{cos}(\textrm{angle}) \cdot \textrm{speed} \\
     dy &= \textrm{sin}(\textrm{angle}) \cdot \textrm{speed}
     \end{align*}
     $$
+
     We can use these values to update the $$x$$ and $$y$$ position:
+
     $$\begin{align*}
     \textrm{pos\_x} &:= \textrm{pos\_x} + dx \\
     \textrm{pos\_y} &:= \textrm{pos\_y} + dy
     \end{align*}
     $$
+
     There is a very important (literal) edge case: When the rabbit reaches the edge of the field (its x or y location is smaller than 0 or bigger than 1), it should not change its position but turn around (i.e., increase the angle by $$\pi$$).
 
 
@@ -125,6 +129,7 @@ You also have to implement is the class `Rabbit`:
 Test what you've done so far. Is the rabbit moving?
 
 Here are some testcases you can use:
+
 * Set the angle to $$0$$. Does the rabbit follow the x-axis?
 * Set the angle to $$\pi$$ (`math.pi`). Does it go in the opposite direction?
 * Set the angle to $$1/2 \pi$$. Does the rabbit follow the y-axis?
