@@ -152,7 +152,7 @@ After your changes the UML should look like this:
 
 ![](./umls/oo-phase2.png){: width="70%"}
 
-The fact that `Experiment` can contain any number of rabbits is indicated by the `*` near the `Rabbit` class on the aggregation line. In the UML everything that is bold is new (and is up to you to implement). So here you'll have to add the method `add_rabbits()`. Everything in italic is not new, but you will have to modify to make things work.
+The fact that `Experiment` can contain any number of rabbits is indicated by the `*` near the `Rabbit` class on the aggregation line. In the UML everything that is bold is new (and is up to you to implement). So here you'll have to add the method `add_rabbits(number_of_rabbits)`. Everything in italic is not new, but you will have to modify to make things work.
 
 ### Specification
 
@@ -209,15 +209,15 @@ The resulting UML will be the same is in the previous step. You don't need to ad
 
 *Modifications* to the class `Rabbit`:
 
-* *modify* method `step()` to get the rabbit to change angle regularly. The rabbit has a $$20%$$ chance to *update* its angle with a random value between $$-\pi/2$$ and $$\pi/2$$. So this is the change of angle relative to the current angle. The possible update of the angle should be done *before* taking a step.
+* *modify* method `step()` to get the rabbit to change `angle` regularly. The rabbit has a $$20%$$ probability to *update* its angle with a random value between $$-\pi/2$$ and $$\pi/2$$ (i.e., between $$-90$$ and $$+90$$ degrees). So this is the change of angle relative to the current `angle`. The possible update of the `angle` should be done *before* taking a step.
 
 ### Test
 
 Here are some useful testcases.
 
 * Do the rabbits seem to move around more naturally (similar to the example animation above)?
-* Set the chance to update to $$0%$$ (so the angle should never change). Are the rabbits moving in a straight line?
-* Set the chance to update back to $$20%$$ but alter the random angle change values to be between $$0$$ and $$0$$ (so the angle shouldn't change). Are the rabbits moving in a straight line? (If they are all moving exactly along the x-axis, something is wrong.)
+* Set the probability to update to $$0%$$ (so the angle should never change). Are the rabbits moving in a straight line?
+* Set the probability to update back to $$20%$$ but alter the random angle change values to be between $$0$$ and $$0$$ (so the angle shouldn't change). Are the rabbits moving in a straight line? (If they are all moving exactly along the x-axis, something is wrong.)
 
 ## Phase 4: Foxes
 
@@ -245,14 +245,14 @@ For the class `Fox`:
 * **add** attribute `speed`. The speed of the fox should be $$0.03$$ (faster than the rabbit).
 * **add** attribute `color`. Foxes get the color `'red'`.
 * **add** method `__init__(pos_x, pos_y, angle)`.
-* **add** method `step()`. The steps are the same as for `Rabbit` only the change of angle is less abrupt: the angle has a 20% change of changing by a random value between $$-\pi/4$$ and $$\pi/4$$
+* **add** method `step()`. The steps are the same as for `Rabbit` only the change of angle is less abrupt: the angle has a 20% probability of changing by a random value between $$-\pi/4$$ and $$\pi/4$$ (i.e., between -45 and 45 degrees).
 
 For the class `Experiment`:
 
 * *change* attribute `rabbits` to `creatures`. This list will now contain both foxes and rabbits.
 * **add** `add_foxes(number_of_foxes)` this should add foxes to the list of creatures.
 * *modify* `__init__(number_of_rabbits, number_of_foxes)`. The method should now get an additional parameter for the amount of foxes. And it should call the method `add_foxes()`.
-* *modify* `add_rabbits(number_of_rabbits)` to use the list `creatures` in stead of `rabbits`.
+* *modify* `add_rabbits(number_of_rabbits)` to add the Rabbit instances to the list `creatures` instead of to `rabbits`.
 * *modify* `step()` to use the list `creatures` in stead of `rabbits`.
 * *modify* `draw()` to use the list `creatures` in stead of `rabbits`.
 
@@ -340,7 +340,7 @@ As you can see in the UML bellow, you will have to add some methods and attribut
 
 ![](umls/oo-phase6.png){: width="100%"}
 
-Note that we chose to make being alive or not to be a property of `Creature`, not just of `Fox`. This is because we know that soon we want rabbits to also be able to die, so we might as well make being alive or not a property of all creatures. Hunger, on the other hand is modelled as a property of only foxes as, at least for now, we will assume that rabbits don't need to eat.
+Note that we chose to make being alive or not to be a property of `Creature`, not just of `Fox`. This is because we know that in a future phase rabbits can also die, so we might as well make being alive or not a property of all creatures. Hunger, on the other hand is modelled as a property of only foxes as, at least for now, we will assume that rabbits don't need to eat.
 
 ### Specification
 
@@ -391,7 +391,9 @@ Modify the class `Creature`:
 
 Modify the class `Fox`:
 
-* **add** method `interact(other)`. This method specifies what a fox should do when it is close enough to another creature: If the other creature is a rabbit, the fox is not hungry anymore and the rabbit is killed. You can use the `alive` flag from the previous phase for this. Tip: you can use `if type(other) == Rabbit:` to test if the other creature is a rabbit.
+* **add** method `interact(other)`. This method specifies what a fox should do when it is close enough to another creature: If the other creature is a rabbit, the fox is not hungry anymore (so `hunger` is set back to `0`) and the rabbit is killed. (You can use the `alive` flag of the rabbit to `False`, to kill the rabbit.)
+
+    Tip: you can use `if type(other) == Rabbit:` to test if the other creature is a rabbit.
 
 Modify the class `Experiment`:
 
@@ -431,7 +433,7 @@ Before you continue, **make a copy of your previous file and call it `phase8.py`
 
 ### Goal
 
-Now creatures can die because of hunger (foxes) or by being eaten (rabbits). But, we still need to make sure they can reproduce (i.e., e new creature of the same kind is introduced into the experiment). Every time a creature meats another creature of the same type, it will have a certain chance to reproduce. The change of reproduction is given by the particular birth rate of the type of creature.
+Now creatures can die because of hunger (foxes) or by being eaten (rabbits). But, we still need to make sure they can reproduce (i.e., e new creature of the same kind is introduced into the experiment). Every time a creature meats another creature of the same type, it will have a certain probability to reproduce. The probability of reproduction is given by the particular birth rate of the type of creature.
 
 It is important to start with a low value for the birth rate. Reproduction is a exponential process and you can easily get an unmanageable explosion of creatures at a high birth rate. The experiment below runs with a $$0.15$$ birth rate for both foxes and rabbits.
 
@@ -447,7 +449,7 @@ Every creature has a birth rate. The `Creature` class defines a default birth ra
 
 Modify the class `Creature`:
 
-* **add** attribute `birthrate`. This `float` indicates how likely it is that two creatures that interact will reproduce. This is the default birth rate for any creature. Value 0 means the creature will never reproduce, and 1 means that the creature will reproduce at every interaction. The value is not super important as both `Fox` and `Rabbit` will define their own specific birth rate.
+* **add** attribute `birthrate`. This `float` indicates how likely it is that two creatures that interact will reproduce. This is the default birth rate for any creature. Value 0 means the creature will never reproduce; 1 means that the creature will reproduce at every interaction; and 0.5 means that a creature will reproduce at about half the interactions. The value is not super important as both `Fox` and `Rabbit` will define their own specific birth rate.
 * **add** attribute `reproduce`.
 * *modify* the method `__init__()`. Set `reproduce` to `False`
 * *modify* the method `interact()`. Every time two creatures of the same kind interact, with a probability of `birthrate`, set `reproduce` to `True`. Keep in mind that the interact method is called twice for each pair. So, it is possible that an interaction will set `reproduce` to `True` for both creatures. You can solve this in many ways, but the easiest is to just leave it. If this leads to a reproduction rate that is too high, you can simply give the variable `birthrate` a lower value.
