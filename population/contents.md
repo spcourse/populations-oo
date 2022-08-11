@@ -1,4 +1,12 @@
-# Population
+# Page 1: OO-video
+
+![](https://www.youtube.com/embed/JeznW_7DlB0)
+
+# Page 2: Cards
+
+After that, do the following small assignment: [cards](../cards)
+
+# Page 3-...: Population
 
 We want to know how a population of foxes and rabbits interact with each other. Specifically: *How does the birth rate of rabbits influence the population*.
 
