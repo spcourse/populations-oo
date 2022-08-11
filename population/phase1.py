@@ -1,10 +1,12 @@
+import matplotlib.pyplot as plt
+import math
+
 class Rabbit():
-    # TODO
+    # TODO define rabbit
 
 class Experiment():
     def __init__(self, rabbit):
         self.rabbit = rabbit
-        self.size = 100
         self.setup_plot()
 
     def run(self, iterations):
@@ -16,11 +18,9 @@ class Experiment():
         self.rabbit.step()
 
     def draw(self):
-        x_values = [self.rabbit.pos_x * self.size]
-        y_values = [self.rabbit.pos_y * self.size]
-        colors = [self.rabbit.color]
-        self.ax1.axis([0, self.size, 0, self.size])
-        self.ax1.scatter(x_values, y_values, color = colors)
+        self.ax1.axis([0, 1, 0, 1])
+
+        # TODO plot rabbit
 
         plt.draw()
         plt.pause(0.01)
