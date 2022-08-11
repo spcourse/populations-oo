@@ -1,10 +1,10 @@
 # Page 1: OO-video
 
-![](https://www.youtube.com/embed/JeznW_7DlB0)
+![embed](https://www.youtube.com/embed/JeznW_7DlB0)
 
 # Page 2: Cards
 
-After that, do the following small assignment: [cards](../cards)
+After that, do the following small assignment: [cards](../../../populations-oo/cards)
 
 # Page 3-...: Population
 
