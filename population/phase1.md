@@ -45,7 +45,7 @@ Start by downloading the file [phase1.py](phase1.py). This will be the starting 
 ### Goal
 Lets start out by having a single rabbit move over the screen. Like in the example below.
 
-![](./gifs/phase1.gif){: width="60%"}
+![](./gifs/phase1.gif){: width="70%"}
 
 The blue dot represents a rabbit and it follows a straight path at a certain angle. When it hits the border it turns a 180 degrees around.
 
@@ -64,7 +64,7 @@ This would show the moving blue dot (the rabbit), were it not that you still hav
 > TODO: verwijder size attribute van alle uml's
 draw() in uml cursief.
 
-![](./umls/oo-phase1.png){: width="40%"}
+![](./umls/oo-phase1.png){: width="70%"}
 
 In this diagram you see that an object of the class `Experiment` contains exactly one object of the class `Rabbit`. This is shown by the line that starts with the diamond shape (⬦---) and has the `1` written next to the `Rabbit` class. The diamond shape denotes aggregation (i.e., "contains") and the number denotes how many. So this translates to: "an experiment contains one rabbit".
 
@@ -131,13 +131,13 @@ Before you continue, **make a copy of your previous file and call it `phase2.py`
 
 A single rabbit moving around is a bit boring, let's add some more. Like so:
 
-![](./gifs/phase2.gif)
+![](./gifs/phase2.gif){: width="70%"}
 
 The great thing of using classes is that we can make multiple instances of a specific class. So we can add multiple rabbits without modifying the `Rabbit` class and with only small modifications to the `Experiment` class.
 
 After your changes the UML should look like this:
 
-![](./umls/oo-phase2.png)
+![](./umls/oo-phase2.png){: width="70%"}
 
 The fact that `Experiment` can contain any number of rabbits is indicated by the `*` near the `Rabbit` class on the aggregation line. In the UML everything that is bold is new (and is up to you to implement). So here you'll have to add the method `add_rabbits()`. Everything in italic is not new, but you will have to modify to make things work.
 
@@ -186,11 +186,11 @@ Before you continue, **make a copy of your previous file and call it `phase3.py`
 
 The straight lines that the rabbits walk don't feel particularly natural. Let's add some unpredictability to their movements. Let's have them change directions from time to time. Like this:
 
-![](./gifs/phase3.gif)
+![](./gifs/phase3.gif){: width="70%"}
 
 The resulting UML will be the same is in the previous step. You don't need to add any classes or methods. You'll just have to modify `step()` slightly.
 
-![](umls/oo-phase3.png)
+![](umls/oo-phase3.png){: width="70%"}
 
 ### Specification
 
@@ -214,11 +214,11 @@ Before you continue, **make a copy of your previous file and call it `phase4.py`
 
 Let's add the foxes to the experiment. For now, they're just going to walk around and not bother any rabbits. Foxes are in many ways similar to rabbits, they have a position and an angle and they move around. But their movements are slightly different. They go faster and they make slower turns. We will give foxes the color red. The new simulation will look like this:
 
-![](./gifs/phase4.gif)
+![](./gifs/phase4.gif){: width="70%"}
 
 This will require a whole new class `Fox` as you can see in the UML:
 
-![](./umls/oo-phase4.png)
+![](./umls/oo-phase4.png){: width="70%"}
 
 You see that the class `Experiment` can contain any number of instances of `Fox` (as indicated by the `*`).
 
@@ -284,7 +284,7 @@ So let's create a new abstraction: You're going to create a superclass called `C
 
 The UML will look like this:
 
-![](umls/oo-phase5.png)
+![](umls/oo-phase5.png){: width="70%"}
 
 Notice that class inheritance is indicated by the arrows. So `Fox` and `Rabbit` both inherit from `Creature`. You can also see that `Fox` and `Rabbit` are reduced a lot as most of their code will now reside in `Creature`.
 
@@ -319,13 +319,13 @@ Before you continue, **make a copy of your previous file and call it `phase6.py`
 
 We need to give the foxes a reason to eat the rabbits, so let's make them hungry. We'll assume that hunger just linearly increases over time and that when Foxes are too hungry they die. Like so (notice the red dots disappearing):  
 
-![](./gifs/phase6.gif)
+![](./gifs/phase6.gif){: width="70%"}
 
 The red dots disappear all at once, because the foxes all come into existence at the same time, they get hungry at the same rate, they cannot feed yet (we have not implemented that part yet), so the foxes all tragically die of hunger at the exact same time.
 
 As you can see in the UML bellow, you will have to add some methods and attributes that have to do with managing creatures being alive or not and foxes being hungry:
 
-![](umls/oo-phase6.png)
+![](umls/oo-phase6.png){: width="70%"}
 
 Note that we chose to make being alive or not to be a property of `Creature`, not just of `Fox`. This is because we know that soon we want rabbits to also be able to die, so we might as well make being alive or not a property of all creatures. Hunger, on the other hand is modelled as a property of only foxes as, at least for now, we will assume that rabbits don't need to eat.
 
@@ -359,11 +359,11 @@ Before you continue, **make a copy of your previous file and call it `phase7.py`
 
 Now that the foxes can get hungry they'll have to be able to feed. The idea is that when a fox gets close enough to a rabbit he can eat it. The rabbit will then be removed from the experiment and the fox will not be hungry anymore. In the example below you see that when a red dot comes close to a blue dot, the blue dot disappears. As a result the red dots stay longer in the experiment.
 
-![](./gifs/phase7.gif)
+![](./gifs/phase7.gif){: width="70%"}
 
 The UML bellow shows the elements that we need to add. We need to be able to compute the *distance* between creatures and we need to have them *interact* when the distance is small enough. This requires modifications to all the classes. We add the `distance()` method to the `Creature` class as we need to be able to compute the distance between any type of creature, not only between foxes or rabbits. We add an `interact()` method to `Creature` as potentially any creature can interact with any other creature. Hover, for now this remains empty. As we only really implement the more specialize `interact()` method of the `Fox` class. Here we define what happens when a fox interacts with another creature. (If the other creature is a rabbit, the fox eats it.)
 
-![](umls/oo-phase7.png)
+![](umls/oo-phase7.png){: width="70%"}
 
 This design follows a design pattern that you see more often in multi-agent systems: the creatures are responsible for their own interactions. That is to say that the `Experiment` code only decides whether or not two agents (i.e., `Creature`s) interact at all. The code for *how* they interact, so what an agent does when it encounters another is part of the agent's class, not of the experiment. So the `Experiment` class checks if two `Creatures` are close enough (with the method `handle_interaction()`). When that is the case, the `Creature` defines how to interact, so in this case if the one creature is a fox and the other creature a rabbit, the first should eat the latter (which is implemented by the `interact()` method in `Fox`).
 
@@ -422,11 +422,11 @@ Now creatures can die because of hunger (foxes) or by being eaten (rabbits). But
 
 It is important to start with a low value for the birth rate. Reproduction is a exponential process and you can easily get an unmanageable explosion of creatures at a high birth rate. The experiment below runs with a $$0.15$$ birth rate for both foxes and rabbits.
 
-![](./gifs/phase8.gif)
+![](./gifs/phase8.gif){: width="70%"}
 
 The UML below shows the required modifications.
 
-![](umls/oo-phase8.png)
+![](umls/oo-phase8.png){: width="70%"}
 
 Every creature has a birth rate. The `Creature` class defines a default birth rate, but each type (`Fox` and `Rabbit`) also defines its own particular birth rate. There are also some modifications to handle the actual reproduction: The `Creature` class has a boolean `reproduce` to flag that it needs to be copied. And the `Experiment` class has a method `resolve_reproduction()` to manage the actual copying of instances when needed.
 
@@ -468,7 +468,7 @@ Make a copy of your previous file and call it `experiment1.py`. Make sure to con
 
 Let's do a first real experiment. You're going to track the size of both the populations over time (iterations), like in the example below:
 
-![](./gifs/phase9.gif)
+![](./gifs/phase9.gif){: width="70%"}
 
 As you can see here, the population of rabbits is not stable. The rabbits die out at around iteration 100. Your goal is to set the birth rate of foxes to 0.05 and find a birth rate of rabbits that makes the population relatively stable (there are always between 10 and 50 rabbits in the system for at least 200 iterations).
 
