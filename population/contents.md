@@ -4,7 +4,7 @@
 
 # Page 2: Cards
 
-After that, do the following small assignment: [cards](../../../populations-oo/cards)
+After that, do the following small assignment: [cards](https://lab.cs50.io/minprog/objects/master/cards/lab)
 
 # Page 3-...: Population
 
