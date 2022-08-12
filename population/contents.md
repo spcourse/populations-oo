@@ -299,7 +299,7 @@ The UML will look like this:
 
 ![](umls/oo-phase5.png){: width="100%"}
 
-Notice that class inheritance is indicated by the arrows. So `Fox` and `Rabbit` both inherit from `Creature`. You can also see that `Fox` and `Rabbit` are reduced a lot as most of their code will now reside in `Creature`.
+Notice that class inheritance is indicated by arrows (⇽). So `Fox` and `Rabbit` both inherit from `Creature`. You can also see that `Fox` and `Rabbit` are reduced a lot as most of their code will now reside in `Creature`.
 
 ### Specification
 
