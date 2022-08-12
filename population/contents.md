@@ -120,7 +120,7 @@ You also have to implement the class `Rabbit`:
     There is a very important (literal) edge case: When the rabbit reaches the edge of the field (its x or y location is smaller than 0 or bigger than 1), it should not change its position but turn around (i.e., increase the angle by $$\pi$$).
 
 
-> Note: None of the methods mentioned above and shown in the UML, contain the `self` parameter, this is left out (as is conventional in UML diagrams) but you always have to add this parameter in your code. So when you create the method `__init__(pos_x, pos_y, angle)`, it should be defined as `def __init__(self, pos_x, pos_y, angle):`. The same goes for the method `step()`: `def step(self):`.
+> Note: None of the methods mentioned above and shown in the UML contain the `self` parameter, this is left out (as is conventional in UML diagrams) but you always have to add this parameter in your code. So when you create the method `__init__(pos_x, pos_y, angle)`, it should be defined as `def __init__(self, pos_x, pos_y, angle):`. The same goes for the method `step()`: `def step(self):`.
 
 > Tip: The number of iterations of the experiment is set to 100 in the example code. It might save you a lot of time to set this to some very small number (like 5) in the beginning, and only when that seems to work set it back to 100. That way you don't have to wait so much every time you're trying to run your code.
 
