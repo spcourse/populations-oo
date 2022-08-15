@@ -69,9 +69,6 @@ The main code (below the `Experiment` class) creates a new rabbit with a specifi
 
 This would show the moving blue dot (the rabbit), were it not that you still have to implement the `Rabbit` class. The relation between the `Experiment` and `Rabbit` class is displayed in the following [UML](https://en.wikipedia.org/wiki/Unified_Modeling_Language) diagram:
 
-> TODO: verwijder size attribute van alle uml's
-draw() in uml cursief.
-
 ![](./umls/oo-phase1.png){: width="70%"}
 
 In this diagram you see that an object of the class `Experiment` contains exactly one object of the class `Rabbit`. This is shown by the line that starts with the diamond shape (⬦---) and has the `1` written next to the `Rabbit` class. The diamond shape denotes aggregation (i.e., "contains") and the number denotes how many. So this translates to: "an experiment contains one rabbit".
@@ -112,8 +109,8 @@ You also have to implement is the class `Rabbit`:
     We can use these values to update the $$x$$ and $$y$$ position:
 
     $$\begin{align*}
-    \textrm{pos\_x} &:= \textrm{pos\_x} + dx \\
-    \textrm{pos\_y} &:= \textrm{pos\_y} + dy
+    \textrm{pos\textunderscore x} &= \textrm{pos\textunderscore x} + dx \\
+    \textrm{pos\textunderscore y} &= \textrm{pos\textunderscore y} + dy
     \end{align*}
     $$
 
@@ -216,8 +213,8 @@ The resulting UML will be the same is in the previous step. You don't need to ad
 Here are some useful testcases.
 
 * Do the rabbits seem to move around more naturally (similar to the example animation above)?
-* Set the probability to update to $$0%$$ (so the angle should never change). Are the rabbits moving in a straight line?
-* Set the probability to update back to $$20%$$ but alter the random angle change values to be between $$0$$ and $$0$$ (so the angle shouldn't change). Are the rabbits moving in a straight line? (If they are all moving exactly along the x-axis, something is wrong.)
+* Set the probability to update to $$0\%$$ (so the angle should never change). Are the rabbits moving in a straight line?
+* Set the probability to update back to $$20\%$$ but alter the random angle change values to be between $$0$$ and $$0$$ (so the angle shouldn't change). Are the rabbits moving in a straight line? (If they are all moving exactly along the x-axis, something is wrong.)
 
 ## Phase 4: Foxes
 
@@ -245,7 +242,7 @@ For the class `Fox`:
 * **add** attribute `speed`. The speed of the fox should be $$0.03$$ (faster than the rabbit).
 * **add** attribute `color`. Foxes get the color `'red'`.
 * **add** method `__init__(pos_x, pos_y, angle)`.
-* **add** method `step()`. The steps are the same as for `Rabbit` only the change of angle is less abrupt: the angle has a 20% probability of changing by a random value between $$-\pi/4$$ and $$\pi/4$$ (i.e., between -45 and 45 degrees).
+* **add** method `step()`. The steps are the same as for `Rabbit` only the change of angle is less abrupt: the angle has a $$20\%$$ probability of changing by a random value between $$-\pi/4$$ and $$\pi/4$$ (i.e., between -45 and 45 degrees).
 
 For the class `Experiment`:
 
