@@ -109,8 +109,8 @@ You also have to implement the class `Rabbit`:
     We can use these values to update the $$x$$ and $$y$$ positions:
 
     $$\begin{align*}
-    \textrm{pos\_ x} &= \textrm{pos\_ x} + dx \\
-    \textrm{pos\_ y} &= \textrm{pos\_ y} + dy
+    \textrm{pos _ x} &= \textrm{pos_ x} + dx \\
+    \textrm{pos_ y} &= \textrm{pos_ y} + dy
     \end{align*}
     $$
 
