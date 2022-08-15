@@ -206,7 +206,7 @@ The resulting UML will be the same as in the previous step. You don't need to ad
 
 *Modifications* to the class `Rabbit`:
 
-* *modify* method `step()` to get the rabbit to change `angle` regularly. The rabbit has a $$20%$$ probability to *update* its angle with a random value between $$-\pi/2$$ and $$\pi/2$$ (i.e., between $$-90$$ and $$+90$$ degrees). So this is the change of angle relative to the current `angle`. The possible update of the `angle` should be done *before* taking a step.
+* *modify* method `step()` to get the rabbit to change `angle` regularly. The rabbit has a $$20\%$$ probability to *update* its angle with a random value between $$-\pi/2$$ and $$\pi/2$$ (i.e., between $$-90$$ and $$+90$$ degrees). So this is the change of angle relative to the current `angle`. The possible update of the `angle` should be done *before* taking a step.
 
 ### Test
 
