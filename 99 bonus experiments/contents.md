@@ -1,3 +1,7 @@
+# Bonus experiment
+
+Beware that the assignments below are not compulsory. And if you decide to make them, you don't have to make them all, or do them in a specific order.
+
 ## BONUS 1: Refactor
 
 Make a copy of your previous file and call it `better.py`
