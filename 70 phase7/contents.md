@@ -56,6 +56,7 @@ Modify the class `Experiment`:
 Do the rabbits seem to disappear when they encounter a fox?
 
 Try some test cases:
+
 * When you have 100 foxes and 100 rabbits, how quickly do the sheep disappear?
 * Make the `interaction_distance` 0. Do all the rabbits remain?
 * Make the `interaction_distance` 1. Do all the rabbits disappear instantly?

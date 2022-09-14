@@ -27,7 +27,7 @@ Modify the class `Fox`:
 
 * **add** attribute `hunger`. This is an integer indicating the degree of hunger of the fox (0 means no hunger at all).
 * *modify* method `__init__()` to set hunger to 0.
-* *modify* method `step()` to increase hunger by 1 at every step. Set alive to `False` once hunger is bigger than 80.
+* *modify* method `step()` to increase hunger by 1 at every step. Set alive to `False` once hunger reaches 80 or more.
 
 Modify the class `Experiment`:
 
