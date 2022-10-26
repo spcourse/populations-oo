@@ -1,6 +1,6 @@
 # Populations
 
-You have been using many objects in earlier assignment. Every string, number, set, dictionary, list, etc. is an object. But you haven't learned yet what an object really is.
+You have been using many objects in earlier assignments. Every string, number, set, dictionary, list, etc. is an object. But you haven't yet learned what an object actually is.
 
 In this module you will learn a very powerful programming paradigm: object oriented programming.
 
