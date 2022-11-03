@@ -27,7 +27,7 @@ For this phase you have to *modify* the class `Experiment` as follows:
     **From here on the `Rabbit` objects will be created *inside* the `Experiment` object.** We don't have to do this in the main code anymore as we did in Phase 1.
 
 * *modify* method `step()` to call the `step()` method of *all* rabbits.
-* *modify* method `draw()` to draw *all* rabbits. *Tip: don't use a loop for calling `self.ax1.scatter(...)` many times as this will make your code very slow. Try to collect all the coordinates to plot first and call `self.ax1.scatter(...)` only once to plot all the sheep in one go.*
+* *modify* method `draw()` to draw *all* rabbits. *Tip: don't use a loop for calling `self.ax1.scatter(...)` many times as this will make your code very slow. Try to collect all the coordinates to plot first and call `self.ax1.scatter(...)` only once to plot all the rabbits in one go.*
 
 The experiment should spawn 10 rabbits when called like this:
 

@@ -57,7 +57,7 @@ Do the rabbits seem to disappear when they encounter a fox?
 
 Try some test cases:
 
-* When you have 100 foxes and 100 rabbits, how quickly do the sheep disappear?
+* When you have 100 foxes and 100 rabbits, how quickly do the rabbits disappear?
 * Make the `interaction_distance` 0. Do all the rabbits remain?
 * Make the `interaction_distance` 1. Do all the rabbits disappear instantly?
 * There are two possible outcomes: (1) The foxes eat all the rabbits and then slowly starve. Or (2) the foxes die out before all the rabbits are eaten and the rabbits survive. The outcome depends partly on the initial amount of rabbits. Experiment with this: For example, given 20 initial rabbits, how many initial foxes do you minimally need to always wind up in situation 1?
