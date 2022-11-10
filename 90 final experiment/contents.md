@@ -10,7 +10,7 @@ Let's do a first real experiment. You're going to track the size of both the pop
 
 As you can see here, the population of rabbits is not stable. The rabbits die out at around iteration 100. Your goal is to set the birth rate of foxes to 0.05 and find a birth rate of rabbits that makes the population relatively stable. I.e., the rabbits don't die out, but they also don't overpopulate the system.
 
-Since there is chance involved and this is a highly chaotic system, you can never guarantee an outcome a 100%, so let's define stable as follows: For at least half the experiments, there are between 10 and 50 rabbits in the system after 200 iterations. 
+Since there is chance involved and this is a highly chaotic system, you can never guarantee an outcome a 100%, so let's define stable as follows: For around half of your experiments, there are at least 10 rabbits in the system after 200 iterations. In other cases, the foxes ate all the rabbits.
 
 ### Setup
 
