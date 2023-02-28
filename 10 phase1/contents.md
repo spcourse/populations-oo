@@ -16,8 +16,8 @@ The file `phase1.py` you downloaded contains an `Experiment` class. This class c
 The main code (below the `Experiment` class) creates a new rabbit with a specific position in the field ($$0.25$$, $$0.75$$) and a specific angle of movement ($$\pi/4$$). Then, a new experiment is created containing this rabbit. And, in the last step, the experiment is run for $$100$$ iterations. All done by these three lines:
 
     my_rabbit = Rabbit(0.25, 0.75, math.pi/4)
-    my_experiment = Experiment(my_rabbit)
-    my_experiment.run(100)
+    my_experiment = Experiment(100, my_rabbit)
+    my_experiment.run()
 
 This would show the moving blue dot (the rabbit), were it not that you still have to implement the `Rabbit` class. The relation between the `Experiment` and `Rabbit` class is displayed in the following [UML](https://en.wikipedia.org/wiki/Unified_Modeling_Language) diagram:
 
@@ -32,9 +32,9 @@ For convenience, we've made everything that you still have to implement bold.
 ### Specification
 So what you get is most of the class `Experiment`. This class contains the following:
 
-* The method `__init__(rabbit)`. This is called when you create a new experiment. So when you create a new experiment you have to give it a rabbit object as an argument.
+* The method `__init__(iterations, rabbit)`. This is called when you create a new experiment. So when you create a new experiment you have to give it a number of iterations to run and a rabbit object as its arguments.
 * The method `step()`. This will call the `step()` method of the rabbit, having it update its location based on its speed and angle.
-* The method `run(iterations)`. This will run the simulation/experiment by calling `step()` and `draw()` successively an `iteration` number of times.
+* The method `run()` with the optional argument `iterations`. This will run the simulation/experiment by calling `step()` and `draw()` successively an `iterations` number of times.
 * The method `setup_plot()`. This is called by `__init__()` and configures matplotlib for this experiment.
 
 For the class `Experiment` you still have to:

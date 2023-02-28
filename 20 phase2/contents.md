@@ -22,7 +22,7 @@ For this phase you have to *modify* the class `Experiment` as follows:
 
 * *modify* attribute `rabbit` (of type `Rabbit`) to `rabbits` (of type `List`).
 * **add** method `add_rabbits(number_of_rabbits)` that creates a list of rabbits with random locations and angles and adds them to the attribute `rabbits`.
-* *modify* `__init__(number_of_rabbits)` to accept the new parameter `number_of_rabbits` and use `add_rabbits()`.
+* *modify* `__init__(iterations, number_of_rabbits)` to accept the new parameter `number_of_rabbits` and use `add_rabbits()`.
 
     **From here on the `Rabbit` objects will be created *inside* the `Experiment` object.** We don't have to do this in the main code anymore as we did in Phase 1.
 
@@ -31,8 +31,8 @@ For this phase you have to *modify* the class `Experiment` as follows:
 
 The experiment should spawn 10 rabbits when called like this:
 
-    my_experiment = Experiment(10)
-    my_experiment.run(100)
+    my_experiment = Experiment(100, 10)
+    my_experiment.run()
 
 > Don't forget the `self` parameter when you define new methods.
 
@@ -40,15 +40,15 @@ The experiment should spawn 10 rabbits when called like this:
 
 Make sure your experiment works with 1 rabbit:
 
-    my_experiment = Experiment(1)
-    my_experiment.run(100)
+    my_experiment = Experiment(100, 1)
+    my_experiment.run()
 
 Make sure your experiment works with 100 rabbits:
 
-    my_experiment = Experiment(100)
-    my_experiment.run(100)
+    my_experiment = Experiment(100, 100)
+    my_experiment.run()
 
 And, with 0 rabbits:
 
-    my_experiment = Experiment(0)
-    my_experiment.run(100)
+    my_experiment = Experiment(100, 0)
+    my_experiment.run()
