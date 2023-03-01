@@ -40,3 +40,12 @@ Modify the class `Experiment`:
 * **add** the method `count_creatures()`. The method should return two values as a tuple; the first being the number of `Rabbit` instances in `self.creatures`, the second the number of `Fox` instances.
 
 ### Test
+
+Run some tests to determine whether the newly added features function as intended.
+
+* Is the visualization disabled by default?
+* Can you disable the visualization by giving the experiment the argument `visualize=True`?
+* Test different values for `birthrate_rabbits` and `birthrate_foxes`.
+* When you set a high birthrate for rabbits or foxes, do their numbers not grow beyond the value you set for `max_creatures`?
+* After running an experiment, can you use the `count_creatures()` method to determine the number of rabbits and foxes remaining? Do these numbers seem correct?
+* Without running the experiment, try to add more rabbits or foxes than the value you set for `max_creatures`. Does `count_creatures()` show that there are no more rabbits and foxes than `max_creatures`?
