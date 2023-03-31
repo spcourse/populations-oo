@@ -1,46 +1,37 @@
-## Experiment 1: Stable population
-
-Make a copy of your previous file and call it `experiment1.py`. Make sure to continue editing in this new file. It is important to keep the previous file as is. For this module, you'll have to submit all the stages separately.
+## Experiment: Population dynamics
 
 ### Goal
 
-Let's do a first real experiment. You're going to track the size of both the populations over time (iterations), like in the example below:
-
 ![](phase9.gif){: width="80%"}
 
-As you can see here, the population of rabbits is not stable. The rabbits die out at around iteration 100. Your goal is to set the birth rate of foxes to 0.05 and find a birth rate of rabbits that makes the population relatively stable. I.e., the rabbits don't die out, but they also don't overpopulate the system.
+The simulation above was run with a birthrate of `0.15` for both rabbits and foxes. As you can see, the population of rabbits is not stable. The rabbits die out at around iteration 100. We would like to run a set of experiments and find out what the effect of different combinations of parameters is on the population of both rabbits and foxes.
 
-Since there is chance involved and this is a highly chaotic system, you can never guarantee an outcome a 100%, so let's define stable as follows: For around half of your experiments, there are at least 10 rabbits in the system after 200 iterations. In other cases, the foxes ate all the rabbits.
+Since our simulation is probabilistic and highly chaotic, we can not guarantee that the outcome of a single run is a good representation of the actual dynamics of the simulation. To get a good overview of the outcome of our experiments we will have to run them many times and analyze the results.
+
+In this phase of our experimentation pipeline we will write the code that runs experiments with varying input parameters multiple times. More specifically, we will run the simulation with different combinations for the birthrate of rabbits and foxes. The generated results for each experiment are then written to several `csv`-files in a `data/` folder for future analysis. Each `csv`-file contains the outcome of a multitude of runs of experiments done with the same input parameters.
 
 ### Setup
 
-You will still need to modify the classes to be able to run this experiment, but we're not going to spell out how to do it. It's up to your design now.
+First, we will write code that can run an experiment with a specific configuration multiple times and record the results to a `csv`-file. We have provided you with some code that should help you in this process which you can [download here](experiment.py).
 
-One of the things to account for is the potential for exponential population growth. Since reproduction is an exponential process, if there are too many rabbits for the foxes to keep up with, they will overrun the system and their numbers will explode. The easiest way to deal with that, for now, is by putting a cap on the total number of rabbits. So we don't ever allow more than 100 rabbits to exist at the same time. (Putting a cap on the foxes is less important as they will only be able to grow in numbers when there are enough rabbits to eat. So capping rabbits automatically caps the number of foxes.)
+The code provided imports the `Experiment` class from your final implementation (`phase9.py`) and provides you with a dictionary named `experiment_kwargs` defining the default set of parameters that we will use for our experiments. We've also defined two functions for you that will make it a bit easier to collect and store your data.
 
-We also want to have a timeline plot that monitors the number of rabbits and foxes in the system. Like in the example above.
+`generate_experiment_name()` is a function that can be used to generate filenames for your experiments. By using this function the name of the `csv`-file will be more descriptive, and manually finding data for experiments done with a specific configuration will be easier. The function accepts a single argument which should be a dictionary formatted like `experiment_kwargs`.
+
+`export_result_to_csv()` is the function you will use to store the results of your experiments. It accepts three arguments; the location where the data should be stored, the configuration of the experiments, and the results of those experiments.
 
 ### Specification
 
-So to run the experiment you have to change the following:
+#### Repeat one experiment configuration `N` times
 
-* Add a way to set a maximum amount of rabbits. Make sure that, once that number is reached, the reproduction of rabbits is temporarily blocked.
-* Create a second subplot that shows a timeline of the rabbits and foxes. You can create a second subplot like so:
+Write code that runs `N` experiments with the given experiment configurations in `experiment_kwargs`. `results` should be filled with tuples, where every tuple indicates the number of rabbits and foxes at the end of an experiment. You can use `Experiment`'s `count_creatures()` method to get each tuple.
 
-        self.fig, (self.ax1, self.ax2) = plt.subplots(2)
+To test your code, try a lower value for `N` first, and look at the generated `csv`-file. Does it contain the values you expected?
 
-    You can then plot using the `ax2` like this:
+#### Repeat many experiment configurations `N` times
 
-        self.ax2.plot(iterations_list, fox_history, color='red')
+Modify your code to run experiments with every possible configuration of `birthrate` for rabbits and foxes. Your code should run the experiment with each combination of birthrates for rabbits and foxes from 0.05 to 0.5, incrementing by 0.05.
 
-    Where for `iterations_list` and `fox_history` you have to fill in your own data.
+To do this, you can use a loop to iterate through the different values of birthrate for rabbits and foxes. For each combination of birthrates, you should run `N` experiments and export the results of each individual configuration using `export_result_to_csv()`.
 
-    Don't forget to clear the plot in the same way you clear the plot of `ax1`:
-
-        self.ax2.cla()
-
-    These two changes might require some refactoring of your code and/or additional methods and attributes. It's up to you to decide how to implement this. But you might, at least, want to have an additional method that allows you to count creatures of a specific type in the experiment.
-* Draw a new UML diagram of your update and save this as `experiment1-uml.png`. You can hand draw it and take a photo if you want.
-    * Make sure the UML diagram contains *all* attributes and methods of each class.
-    * Clearly highlight your modifications concerning the UML of the previous phase.
-* Run the experiment (a decent number of times). What seems to be a good growth rate for the rabbits?
+If done properly, after some time, you should end up with 100 different `csv`-files containing `N` results each.

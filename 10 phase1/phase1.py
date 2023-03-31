@@ -8,6 +8,7 @@ class Experiment():
     def __init__(self, iterations, rabbit):
         self.iterations = iterations
         self.rabbit = rabbit
+        
         self.setup_plot()
 
     def run(self, iterations=None):
@@ -36,7 +37,7 @@ class Experiment():
         self.ax1.axes.get_xaxis().set_visible(False)
         self.ax1.axes.get_yaxis().set_visible(False)
 
-
-my_rabbit = Rabbit(0.25, 0.75, math.pi/4)
-my_experiment = Experiment(100, my_rabbit)
-my_experiment.run()
+if __name__ == "__main__":
+    my_rabbit = Rabbit(0.25, 0.75, math.pi/4)
+    my_experiment = Experiment(100, my_rabbit)
+    my_experiment.run()

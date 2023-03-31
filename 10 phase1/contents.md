@@ -13,13 +13,15 @@ The blue dot represents a rabbit and it follows a straight path at a certain ang
 
 The file `phase1.py` you downloaded contains an `Experiment` class. This class contains the main functionality for plotting and managing the experiment you're about to make. In this assignment, you will iteratively extend the functionality of this class and add other classes.
 
-The main code (below the `Experiment` class) creates a new rabbit with a specific position in the field ($$0.25$$, $$0.75$$) and a specific angle of movement ($$\pi/4$$). Then, a new experiment is created containing this rabbit. And, in the last step, the experiment is run for $$100$$ iterations. All done by these three lines:
+The main code (below the `Experiment` class) creates a new rabbit with a specific position in the field ($$0.25$$, $$0.75$$) and a specific angle of movement ($$\pi/4$$). Then, a new experiment is created with a limit of 100 iterations and containing the created rabbit. And, in the last step, the experiment is run for $$100$$ iterations. All done by these three lines:
 
     my_rabbit = Rabbit(0.25, 0.75, math.pi/4)
     my_experiment = Experiment(100, my_rabbit)
     my_experiment.run()
 
-This would show the moving blue dot (the rabbit), were it not that you still have to implement the `Rabbit` class. The relation between the `Experiment` and `Rabbit` class is displayed in the following [UML](https://en.wikipedia.org/wiki/Unified_Modeling_Language) diagram:
+> You might wonder why the following statement is in the code: `if __name__ == "__main__":`. In short: it allows you to execute code when the file is run directly, but not when it’s imported. This way, it is possible to write (and keep!) code that tests your implementation in the program without having to run it every time when the code is used in other places.
+
+Running this program would show the moving blue dot (the rabbit), were it not that you still have to implement the `Rabbit` class. The relation between the `Experiment` and `Rabbit` class is displayed in the following [UML](https://en.wikipedia.org/wiki/Unified_Modeling_Language) diagram:
 
 ![](oo-phase1.png){: width="70%"}
 
@@ -32,9 +34,9 @@ For convenience, we've made everything that you still have to implement bold.
 ### Specification
 So what you get is most of the class `Experiment`. This class contains the following:
 
-* The method `__init__(iterations, rabbit)`. This is called when you create a new experiment. So when you create a new experiment you have to give it a number of iterations to run and a rabbit object as its arguments.
+* The method `__init__(iterations, rabbit)`. This is called when you create a new experiment. When you create a new experiment you have to give it a number of `iterations` to run and a `Rabbit` object as its arguments.
 * The method `step()`. This will call the `step()` method of the rabbit, having it update its location based on its speed and angle.
-* The method `run()` with the optional argument `iterations`. This will run the simulation/experiment by calling `step()` and `draw()` successively an `iterations` number of times.
+* The method `run()` with the optional argument `iterations`. This will run the simulation/experiment by calling `step()` and `draw()` successively an `iterations` number of times. If `iterations` is not given by the user, the default value is retrieved from the value stored in `self.iterations`.
 * The method `setup_plot()`. This is called by `__init__()` and configures matplotlib for this experiment.
 
 For the class `Experiment` you still have to:
@@ -44,11 +46,11 @@ For the class `Experiment` you still have to:
 You also have to implement the class `Rabbit`:
 
 * **add** class `Rabbit`
-* **add** attribute `pos_x`, `pos_y`: The position of the rabbit. These are values between $$0$$ and $$1$$, where $$0, 0$$ is the left-bottom corner of the field and $$1, 1$$ is the right-upper corner.
-* **add** attribute `angle`: The angle at which the rabbit will move. An angle of $$0$$ makes the rabbit move along the x-axis and an angle of $$\pi /2$$ makes the rabbit move along the y-axis.
-* **add** attribute `speed`: The speed at which the rabbit moves every step of the simulation ($$0.01$$ is a good value to start with).
-* **add** attribute `color`: The color for displaying the rabbit in the plot. Rabbits get the color `'blue'`.
 * **add** method `__init__(pos_x, pos_y, angle)`: This method is automatically called when creating a new `Rabbit` object. When creating a new `Rabbit` object, you have to provide the position and angle. The method should assign those to the appropriate attributes. The init should also set the values for `speed` and `color`.
+  * **add** attribute `pos_x`, `pos_y`: The position of the rabbit. These are values between $$0$$ and $$1$$, where $$0, 0$$ is the left-bottom corner of the field and $$1, 1$$ is the right-upper corner.
+  * **add** attribute `angle`: The angle at which the rabbit will move. An angle of $$0$$ makes the rabbit move along the x-axis and an angle of $$\pi /2$$ makes the rabbit move along the y-axis.
+  * **add** attribute `speed`: The speed at which the rabbit moves every step of the simulation ($$0.01$$ is a good value to start with).
+  * **add** attribute `color`: The color for displaying the rabbit in the plot. Rabbits get the color `'blue'`.
 * **add** method `step()`: Run a single step of the simulation. This should update the position of the rabbit.
     The rate of change ($$dx$$ and $$dy$$) is given by the formulas:
 

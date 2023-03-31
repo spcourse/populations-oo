@@ -19,11 +19,11 @@ You see that the class `Experiment` can contain any number of instances of `Fox`
 For the class `Fox`:
 
 * **add** class `Fox`. For now, it has the same properties as the `Rabbit`, only the speed and color have different values.
-* **add** attributes `pos_x`, `pos_y`.
-* **add** attribute `angle`.
-* **add** attribute `speed`. The speed of the fox should be $$0.03$$ (faster than the rabbit).
-* **add** attribute `color`. Foxes get the color `'red'`.
 * **add** method `__init__(pos_x, pos_y, angle)`.
+  * **add** attributes `pos_x`, `pos_y`.
+  * **add** attribute `angle`.
+  * **add** attribute `speed`. The speed of the fox should be $$0.03$$ (faster than the rabbit).
+  * **add** attribute `color`. Foxes get the color `'red'`.
 * **add** method `step()`. The steps are the same as for `Rabbit` only the change of angle is less abrupt: the angle has a $$20\%$$ probability of changing by a random value between $$-\pi/4$$ and $$\pi/4$$ (i.e., between -45 and 45 degrees).
 
 For the class `Experiment`:

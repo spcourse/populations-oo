@@ -19,11 +19,11 @@ Notice that class inheritance is indicated by arrows (⇽). So `Fox` and `Rabbit
 
 Create a new class called `Creature`. For this class:
 
-* **add** attributes `pos_x`, `pos_y`.
-* **add** attribute `angle`.
-* **add** attribute `speed`. Creatures get the default speed $$0.01$$.
-* **add** attribute `color`. Creatures get the default color `'black'`.
 * **add** method `__init__(pos_x, pos_y, angle)`.
+  * **add** attributes `pos_x`, `pos_y`.
+  * **add** attribute `angle`.
+  * **add** attribute `speed`. Creatures get the default speed $$0.01$$.
+  * **add** attribute `color`. Creatures get the default color `'black'`.
 * **add** method `step()`. This method should only define the step based on the current angle, position and speed. It should not define the change of angle as that part is defined in the `step()` methods of the subclasses `Rabbit` and `Fox`
 
 Modify the `Fox` class. You can remove a lot of code and inherit it from `Creature`.

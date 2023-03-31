@@ -20,19 +20,22 @@ Note that we chose to make being alive or not to be a property of `Creature`, no
 
 Modify the class `Creature`:
 
-* **add** attribute `alive`. This boolean registers if a creature is alive or not.
-* *modify* method `__init__()` to set alive to its default value: `True`.
+* *modify* method `__init__()`.
+  * **add** attribute `alive`. This boolean registers if a creature is alive or not. Set the value of `alive` to `True`.
 
 Modify the class `Fox`:
 
-* **add** attribute `hunger`. This is an integer indicating the degree of hunger of the fox (0 means no hunger at all).
-* *modify* method `__init__()` to set hunger to 0.
+* *modify* method `__init__()`.
+  * **add** attribute `hunger`. This is an integer indicating the degree of hunger of the fox (0 means no hunger at all). Set the value to `0`.
 * *modify* method `step()` to increase hunger by 1 at every step. Set alive to `False` once hunger reaches 80 or more.
 
 Modify the class `Experiment`:
 
 * **add** method `resolve_deaths()` that checks all creatures. If a creature is not `alive` it should be removed from the list of creatures.
-* *modify* method `step()` to call `resolve_deaths()` at the end of every step.
+
+  Tip: Find a solution that does not remove elements from a list you are looping over directly! The elements that come after the element that is removed shift over to the left, which will cause the loop to skip the element directly after the removed element. 
+
+* *modify* method `step()` to call `resolve_deaths()`. This should be done after all the creatures' step have methods have been called.
 
 ### Test
 
