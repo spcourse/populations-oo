@@ -1,6 +1,6 @@
 ## Phase 6: Starving foxes
 
-Before you continue, **make a copy of your previous file and call it `phase6.py`**. Make sure to **continue editing in this new file**. It is important to keep the previous file as is. For this module, you'll have to submit all the stages separately.
+Before you continue, **make a copy of your previous file and call it `phase6.py`**. Make sure to **continue editing in this new file**. 
 
 ### Goal
 
@@ -33,7 +33,7 @@ Modify the class `Experiment`:
 
 * **add** method `resolve_deaths()` that checks all creatures. If a creature is not `alive` it should be removed from the list of creatures.
 
-  Tip: Find a solution that does not remove elements from a list you are looping over directly! The elements that come after the element that is removed shift over to the left, which will cause the loop to skip the element directly after the removed element. 
+  Tip: Find a solution that does not remove elements from a list you are looping over directly! The elements that come after the element that is removed shift over to the left, which will cause the loop to skip the element directly after the removed element.
 
 * *modify* method `step()` to call `resolve_deaths()`. This should be done after all the creatures' step have methods have been called.
 

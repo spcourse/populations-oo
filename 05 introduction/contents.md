@@ -1,6 +1,6 @@
 # Populations introduction
 
-We want to know how a population of foxes and rabbits interact with each other. Specifically: *How does the birth rate of rabbits influence the population*.
+We want to know how a population of foxes and rabbits interact with each other. Specifically: *How do birth rates influence the population*.
 
 ## Background
 

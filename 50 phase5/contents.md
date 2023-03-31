@@ -1,6 +1,6 @@
 ## Phase 5: Creatures
 
-Before you continue, **make a copy of your previous file and call it `phase5.py`**. Make sure to **continue editing in this new file**. It is important to keep the previous file as is. For this module, you'll have to submit all the stages separately.
+Before you continue, **make a copy of your previous file and call it `phase5.py`**. Make sure to **continue editing in this new file**. 
 
 ### Goal
 Before adding more complexity again in the next phase, let's now focus on making the code a bit nicer.

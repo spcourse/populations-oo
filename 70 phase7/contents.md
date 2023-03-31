@@ -1,6 +1,6 @@
 ## Phase 7: Feeding foxes
 
-Before you continue, **make a copy of your previous file and call it `phase7.py`**. Make sure to **continue editing in this new file**. It is important to keep the previous file as is. For this module, you'll have to submit all the stages separately.
+Before you continue, **make a copy of your previous file and call it `phase7.py`**. Make sure to **continue editing in this new file**.
 
 ### Goal
 
@@ -49,7 +49,7 @@ Modify the class `Experiment`:
 
 Modify the class `Fox`:
 
-* **add** method `interact(other)`. This method specifies what a fox should do when it interacts with another creature: if the other creature is a rabbit, the fox is not hungry anymore (`hunger` is set back to `0`) and the rabbit is killed.
+* **add** method `interact(other)`. This method specifies what a fox should do when it interacts with another creature: if the other creature is a rabbit, the fox is not hungry anymore (`hunger` is set back to `0`) and the rabbit is killed. The method should also call `super().interact(other)` to make sure that any functionality that is implemented in the future in `Creature`'s `interact()` is executed as well.
 
     Tip: you can use `if type(other) == Rabbit:` to test if the other creature is a rabbit. You can set the `alive` attribute of the rabbit to `False`, to kill the rabbit.
 
