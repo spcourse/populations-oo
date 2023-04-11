@@ -18,22 +18,13 @@ The UML below shows the required modifications:
 
 ### Specification
 
-Modify the class `Fox`:
-
-* *modify* `__init__` to accept the new parameter `birthrate` and use it to set the value for the attribute `birthrate`.
-
-Modify the class `Rabbit`:
-
-* *modify* `__init__` to accept the new parameter `birthrate` and use it to set the value for the attribute `birthrate`.
-
 Modify the class `Experiment`:
 
-* *modify* `__init__` to accept four new parameters: `birthrate_rabbits`, `birthrate_foxes`, `max_creatures`, and `visualize`
-  * All four parameters should be stored as attributes.
+* *modify* `__init__()` to accept two new parameters: `max_creatures`, and `visualize`
+  * All parameters should be stored as attributes.
   * `max_creatures` should get a default value of `50` in the method header
   * `visualize` should get a default value of `False` in the method header
-* *modify* `__init__` such that the call to the method `setup_plot()` such that it is only done when `visualize` is set to `True`
-* *modify* the methods `add_rabbits()` and `add_foxes()`. They should only add creatures as long as there are fewer creatures in the list `creatures` than `max_creatures`. Additionally, since we added `birthrate` to the `__init__` of our creatuers, adjust the code that creates `Rabbit` and `Fox` instances such that it uses `birthrate_rabbits` and `birthrate_foxes` respectively.
+* *modify* `__init__()` such that the call to the method `setup_plot()` such that it is only done when `visualize` is set to `True`
 * *modify* the method `run()`. It should only call the method `draw()` when `visualize` is set to `True`
 * **add** the method `count_creatures()`. The method should return two values as a tuple; the first being the number of `Rabbit` instances in `self.creatures`, the second the number of `Fox` instances.
 
@@ -44,5 +35,4 @@ Run some tests to determine whether the newly added features function as intende
 * Is the visualization disabled by default?
 * Can you enable the visualization by giving the experiment the argument `visualize=True`?
 * After running an experiment, can you use the `count_creatures()` method to determine the number of rabbits and foxes remaining? Do these numbers seem correct?
-* Test different values for `birthrate_rabbits` and `birthrate_foxes`.
 * When you set a high birthrate for rabbits or foxes, do their numbers not grow beyond the value you set for `max_creatures`?
