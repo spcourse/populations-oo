@@ -24,15 +24,14 @@ By default, every creature has a `birthrate`. This attribute is defined in the `
 
 There are also some modifications that are required to handle the actual reproduction. For example, the `Creature` class has a boolean attribute named `reproduce` to flag that a new creature of the same type needs to be created. The `Experiment` class has a new method `resolve_reproduction()` to detect these flags and create new creatures when needed. The methods `add_rabbits()` and `add_foxes()` can be reused to add these creatures to the system.
 
-One of our goals was to make it possible to set the values for the `birthrate` of all foxes and rabbits to a specific value when initializing the `Experiment`. This means that the birthrates for foxes and rabbits need to become attributes of the `Experiment` class, as they are needed every time we use `add_rabbits()` or `add_foxes()`.
+One of our goals was to make it possible to set the values for the `birthrate` of all foxes and/or rabbits to a specific value when initializing the `Experiment`. This means that the birthrates for foxes and rabbits need to become attributes of the `Experiment` class, as they are needed every time we use `add_rabbits()` or `add_foxes()`.
 
 ### Specification
 
 Modify the class `Creature`:
 
 * *modify* the method `__init__()`.
-  * *modify* the definition of the method to accept the new parameter `birthrate`
-  * **add** attribute `birthrate`. This `float` indicates how likely it is that two creatures that interact will reproduce. This is the default birth rate for any creature. Value 0 means the creature will never reproduce; 1 means that the creature will reproduce at every interaction; and 0.5 means that a creature will reproduce at about half the interactions.
+  * **add** attribute `birthrate`. This `float` indicates how likely it is that two creatures that interact will reproduce. This is the default birth rate for any creature. Value 0 means the creature will never reproduce; 1 means that the creature will reproduce at every interaction; and 0.5 means that a creature will reproduce at about half the interactions. Set this value to 0 by default.
   * **add** attribute `reproduce`. Set `reproduce` to `False`.
 * *modify* the method `interact()`. Every time two creatures of the same kind interact, with a probability of `birthrate`, set `reproduce` to `True`. Recall that the interact method is called twice for each pair. So, an interaction may set `reproduce` to `True` for both creatures. You can solve this in many ways, but the easiest is to just leave it. If this leads to a reproduction rate that is too high, you can simply give the variable `birthrate` a lower value.
 
@@ -52,7 +51,7 @@ Modify the class `Experiment`:
 * *modify* the methods `add_rabbits()` and `add_foxes()`. They should only add creatures as long as there are fewer creatures in the list `creatures` than `max_creatures`. Additionally, since we added `birthrate` to the `__init__` of our creatures, adjust the code that creates `Rabbit` and `Fox` instances such that it uses `birthrate_rabbits` and `birthrate_foxes` respectively.
 * **add** the method `resolve_reproduction()`. This method checks all creatures. If a creature is marked for reproduction, add another creature of the same type to the experiment with a random location and angle. Make sure to unmark the reproducing creature for reproduction. Otherwise, the creature would start making endless copies.
 
-    Note that it really needs to be a random new location. A creature cannot be spawned at a fixed location or the location of the parent! Try to reason why this is.
+    Note that it really needs to be a random new location. A creature cannot be spawned at a fixed location or the location of the parent! Try to reason why this is the case.
 * *modify* method `step()` to call `resolve_reproduction()`.
 
 ### Test
