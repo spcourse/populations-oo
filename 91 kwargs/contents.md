@@ -76,7 +76,7 @@ The advantage of using `**kwargs` in this way is that we can pass a large number
 
 > If we have a function that takes a large number of keyword arguments, we might store those arguments in a configuration file or database, and then load them into a dictionary and pass them to the function using `**kwargs`.
 
-## `*args`
+# `*args`
 
 Another useful feature in Python is positional argument unpacking. This allows you to expand an iterable (such as a list or tuple) into separate arguments when calling a function. This is done by placing an asterisk (`*`) before the iterable argument in the function call.
 
