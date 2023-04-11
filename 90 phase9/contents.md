@@ -4,7 +4,7 @@ Before you continue, **make a copy of your previous file and call it `phase9.py`
 
 ### Goal
 
-Finally, we would like to be able to use our model to run a whole suite of experiments using several experiment parameters. In this phase we will work on making that possible, by addressing a couple of issues:
+We would like to be able to use our model to run a whole suite of experiments using several experiment parameters. These experiments will provide data that can be used to explore the dynamics and interactions of the different creatures within the simulation. In this phase we will work on making the experimentation possible, by addressing a couple of issues:
 
 1. The model has potential for exponential population growth. In our model, reproduction is an exponential process. If more rabbits are born than the foxes can eat, the number rabbits will quickly increase and your program will become unresponsive. The easiest way to deal with that, for now, is by putting a cap on the total number of creatures.
 
