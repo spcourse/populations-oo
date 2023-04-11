@@ -1,6 +1,6 @@
 ## Keyword arguments
 
-In Python, keyword arguments can be used to pass arguments to a function using their parameter names. This can make functions with a lot of input paramaters easier to use, changing specific parameters but not all of them easier, code more readable, and help avoid errors, since it also allows you to change the order of the parameters.
+In Python, keyword arguments can be used to pass arguments to a function using their parameter names. This can make functions with a lot of input paramaters easier to use and changing specific parameters, but not all of them, easier. It also makes your code more readable, and helps avoid errors, since it also allows you to change the order of the parameters.
 
 Here's an example:
 
@@ -33,6 +33,21 @@ Which will, despite the order being different, both produce the same output as b
     Alice is 30 years old and lives in New York.
     Alice is 30 years old and lives in New York.
 
+This also works when you have a function that has *default arguments*, and comes in especially handy when you want to change only one specific argument to some value that is not its default. The following function has 3 default arguments and calculates the volume of a beam:
+
+    def calculate_volume(height=1, width=1, depth=1):
+        return height * width * depth
+
+By default, the function calculates the volume of a beam with a `height`, `width`, and `depth` of length 1 (a cube). If we would like to change just the `depth` of the beam to the value `3` *without* using *keyword arguments*, we would need to do the following:
+
+    print(calculate_volume(1, 1, 3))
+
+However, if we use keyword arguments, the following is also possible:
+
+    print(calculate_volume(depth=3))
+
+By not providing values for the `height` and `width` arguments, they assume their default values of `1`, while the value for `depth` is specifically set to `3`.
+
 ## Passing a dictionary of keyword arguments with `**`
 
 In addition to positional and keyword arguments, Python also allows us to use the so-called `**kwargs` notation to pass a number of keyword arguments to a function as a dictionary.
@@ -61,7 +76,7 @@ The advantage of using `**kwargs` in this way is that we can pass a large number
 
 > If we have a function that takes a large number of keyword arguments, we might store those arguments in a configuration file or database, and then load them into a dictionary and pass them to the function using `**kwargs`.
 
-### `*args`
+## `*args`
 
 Another useful feature in Python is positional argument unpacking. This allows you to expand an iterable (such as a list or tuple) into separate arguments when calling a function. This is done by placing an asterisk (`*`) before the iterable argument in the function call.
 
