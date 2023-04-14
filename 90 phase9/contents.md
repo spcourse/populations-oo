@@ -34,6 +34,6 @@ Modify the class `Experiment`:
 Run some tests to determine whether the newly added features function as intended.
 
 * Is the visualization disabled by default?
-* Can you enable the visualization by giving the experiment the argument `visualize=True`?
+* Can you enable the visualization by setting the argument `visualize` to `True` when creating an `Experiment`?
 * After running an experiment, can you use the `count_creatures()` method to determine the number of rabbits and foxes remaining? Do these numbers seem correct?
 * When you set a high birthrate for rabbits or foxes, do their numbers not grow beyond the value you set for `max_creatures`?

@@ -12,9 +12,7 @@ It is important to start with a low value for the birth rate. Reproduction is an
 
 Ultimately, we would like to examine how the birthrates of foxes an rabbits affect the dynamics of the system as a whole. Therefore, it is important to make it easy to change the rate at which a specific species reproduce. Manually changing this value by going into the code, changing a parameter, and then running the code again is not a good solution. This would effectively make in impossible to run a large amount of automated experiments. We will resolve this by adding arguments to the initialization of the experiment class that can set the birthrate of rabbits and foxes to a specific desired value.
 
-> There are multiple other parameters in our implementation that are not easily changeable, like `speed`, `color`, the amount of `hunger` a fox can have before it dies, and some others. Even though it would probably be better code design (increasing abstraction), we have chosen not to include these parameters in the initialization of the `Experiment` class.
-
-> Similarly, you might have noticed the code duplication in the methods `add_rabbits()` and `add_foxes()`. Alternative ways of implementing the experiment parameters or the aforementioned methods would make the code more complex, and therefore more difficult to implement. We have opted for the easier implementation. _If you are up to the challenge, you are allowed improve the implementation of these features, as long as the code functions in the same way._
+> There are multiple other parameters in our implementation that are not easily changeable, like `speed`, `color`, the amount of `hunger` a fox can have before it dies, and some others. Even though it would probably be better code design (increasing abstraction), we have chosen not to include these parameters in the initialization of the `Experiment` class. _If you are up to the challenge, you are allowed improve the implementation of these features, as long as the code functions in the same way._
 
 The UML below shows the required modifications.
 
@@ -25,6 +23,8 @@ By default, every creature has a `birthrate`. This attribute is defined in the `
 There are also some modifications that are required to handle the actual reproduction. For example, the `Creature` class has a boolean attribute named `reproduce` to flag that a new creature of the same type needs to be created. The `Experiment` class has a new method `resolve_reproduction()` to detect these flags and create new creatures when needed. The methods `add_rabbits()` and `add_foxes()` can be reused to add these creatures to the system.
 
 One of our goals was to make it possible to set the values for the `birthrate` of all foxes and/or rabbits to a specific value when initializing the `Experiment`. This means that the birthrates for foxes and rabbits need to become attributes of the `Experiment` class, as they are needed every time we use `add_rabbits()` or `add_foxes()`.
+
+> You might have noticed the code duplication in the methods `add_rabbits()` and `add_foxes()`. Alternative ways of implementing the experiment parameters or the aforementioned methods would make the code more complex, and therefore more difficult to implement. We have opted for the easier implementation. _If you are up to the challenge, you are allowed improve the implementation of these features, as long as the code functions in the same way._
 
 ### Specification
 
