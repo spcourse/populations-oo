@@ -1,6 +1,6 @@
 ## Keyword arguments
 
-In Python, keyword arguments can be used to pass arguments to a function using their parameter names. This can make functions with a lot of input paramaters easier to use and changing specific parameters, but not all of them, easier. It also makes your code more readable, and helps avoid errors, since it also allows you to change the order of the parameters.
+In Python, keyword arguments can be used to pass arguments to a function using their parameter names. This can make functions with many input paramaters a lot easier to use when only few of these parameters are changed. It also makes your code more readable, and helps avoid errors, since it also allows you to change the order of the parameters.
 
 Here's an example:
 
@@ -76,7 +76,7 @@ The advantage of using `**kwargs` in this way is that we can pass a large number
 
 > If we have a function that takes a large number of keyword arguments, we might store those arguments in a configuration file or database, and then load them into a dictionary and pass them to the function using `**kwargs`.
 
-### *args
+### Unpacking arguments
 
 Another useful feature in Python is positional argument unpacking. This allows you to expand an iterable (such as a list or tuple) into separate arguments when calling a function. This is done by placing an asterisk (`*`) before the iterable argument in the function call.
 
@@ -97,4 +97,4 @@ You can also use positional argument unpacking with a mix of regular arguments a
 
 `fun()` still takes three arguments, but we only pass one argument directly, and then use `*lst` to unpack the remaining arguments from our list.
 
-> Note that the total number of values passed to the function must still be the same as there are positional arguments in the function definition!
+> Note that the total number of values passed to the function must still be the same as the number of positional arguments in the function definition!

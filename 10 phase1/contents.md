@@ -29,7 +29,7 @@ In this diagram, you see that an object of the class `Experiment` contains exact
 
 The UML diagram also shows the methods and attributes that the classes have.
 
-For convenience, we've made everything that you still have to implement bold.
+For convenience, we've made everything that you have to implement **bold** and everything that needs to be modified *italic*.
 
 ### Specification
 So what you get is most of the class `Experiment`. This class contains the following:

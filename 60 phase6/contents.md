@@ -4,15 +4,17 @@ Before you continue, **make a copy of your previous file and call it `phase6.py`
 
 ### Goal
 
-We need to give the foxes a reason to eat the rabbits, so let's make them hungry. We will assume that hunger just linearly increases over time and that when Foxes are too hungry they die. Like so (notice the red dots disappearing):  
+We need to give the foxes a reason to eat the rabbits, so let's make them hungry. We will assume that hunger linearly increases over time, and that Foxes die when they are too hungry. Like so (notice the red dots disappearing):  
 
 ![](phase6.gif){: width="60%"}
 
-In this simulation, the red dots disappear all at once. The reason behind this is that all Foxes are created at the same moment in time. This means that they get hungry at the same rate, and, since we have not implemented that part yet, can not eat. So, all the foxes tragically die of hunger at the exact same time.
+In this simulation, the red dots disappear all at once. The reason behind this is that all Foxes are created at the same moment in time. This means that they get hungry at the same rate, and, since we have not implemented that part yet, they can not eat. So, all the foxes tragically die of hunger at the exact same time.
 
 As you can see in the UML below, you will have to add some methods and attributes that take care of dead / alive creatures and foxes being hungry:
 
 ![](oo-phase6.png){: width="100%"}
+
+As with previous UMLs, everything that you have to implement is made **bold** and everything that needs to be modified is made *italic*.
 
 Note that we chose to make being alive or not to be a property of `Creature`, not just of `Fox`. This is a design choice we made because we know that in a future phase rabbits can also die, so we might as well make being alive or not a property of all creatures. Hunger, on the other hand, is modelled as a property of only foxes. For now, we will assume that rabbits do not need to eat.
 
@@ -33,9 +35,9 @@ Modify the class `Experiment`:
 
 * **add** method `resolve_deaths()` that checks all creatures. If a creature is not `alive` it should be removed from the list of creatures.
 
-  Tip: Find a solution that does not remove elements from a list you are looping over directly! Doing this will cause the loop to skip the element that comes directly after the removed element.
+  **Hint:** Removing elements from a list *while you are looping over it* will usually result in bugs, so try to find a different way to solve this part of the assignment.
 
-* *modify* method `step()` to call `resolve_deaths()`. This should be done after all the creatures' step have methods have been called.
+* *modify* method `step()` to call `resolve_deaths()`. _This should be done after **all** the creatures' `step()` methods have been called._ Deaths only have to be resolved once per iteration of the experiment.
 
 ### Test
 

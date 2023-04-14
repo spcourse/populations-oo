@@ -6,11 +6,11 @@ Before you continue, **make a copy of your previous file and call it `phase8.py`
 
 Now creatures can die because of hunger (foxes) or by being eaten (rabbits). But, we still need to make sure they can reproduce (i.e., e new creature of the same kind is introduced into the experiment). Every time a creature meets another creature of the same type, it will have a certain probability to reproduce. The probability of reproduction is given by the particular birth rate of the type of creature.
 
-It is important to start with a low value for the birth rate. Reproduction is an exponential process and you can easily get an unmanageable explosion of creatures at a high birth rate. The experiment below runs with a $$0.15$$ birth rate for both foxes and rabbits.
+It is important to start with a low value for the birth rate. Reproduction is an exponential process and you can easily get an unmanageable explosion of creatures at a high birth rate. The experiment below was configured with a birth rate of 0.15 for both rabbits and foxes.
 
 ![](phase8.gif){: width="60%"}
 
-As our ultimate goal is to examine how the birthrates of foxes and rabbits influence the dynamics of the system as a whole, it is important to make it easy to change the rate at which a specific species reproduce. Manually changing this value by going into the code, changing a parameter, and then running the code again is not a good solution. This would effectively make in impossible to run a large amount of automated experiments. We will resolve this by adding arguments to the initialization of the experiment class that can set the birthrate of rabbits and foxes to a specific desired value.
+Ultimately, we would like to examine how the birthrates of foxes an rabbits affect the dynamics of the system as a whole. Therefore, it is important to make it easy to change the rate at which a specific species reproduce. Manually changing this value by going into the code, changing a parameter, and then running the code again is not a good solution. This would effectively make in impossible to run a large amount of automated experiments. We will resolve this by adding arguments to the initialization of the experiment class that can set the birthrate of rabbits and foxes to a specific desired value.
 
 > There are multiple other parameters in our implementation that are not easily changeable, like `speed`, `color`, the amount of `hunger` a fox can have before it dies, and some others. Even though it would probably be better code design (increasing abstraction), we have chosen not to include these parameters in the initialization of the `Experiment` class.
 
@@ -33,7 +33,7 @@ Modify the class `Creature`:
 * *modify* the method `__init__()`.
   * **add** attribute `birthrate`. This `float` indicates how likely it is that two creatures that interact will reproduce. This is the default birth rate for any creature. Value 0 means the creature will never reproduce; 1 means that the creature will reproduce at every interaction; and 0.5 means that a creature will reproduce at about half the interactions. Set this value to 0 by default.
   * **add** attribute `reproduce`. Set `reproduce` to `False`.
-* *modify* the method `interact()`. Every time two creatures of the same kind interact, with a probability of `birthrate`, set `reproduce` to `True`. Recall that the interact method is called twice for each pair. So, an interaction may set `reproduce` to `True` for both creatures. You can solve this in many ways, but the easiest is to just leave it. If this leads to a reproduction rate that is too high, you can simply give the variable `birthrate` a lower value.
+* *modify* the method `interact()`. Every time two creatures of the same kind interact, with a probability of `birthrate`, set `reproduce` to `True`. Recall that the interact method is called twice for each pair. So, an interaction may set `reproduce` to `True` for both creatures. You can solve this in many ways, but the easiest is to just leave it. If this leads to a reproduction rate that is too high, we can simply set the `birthrate` of the creatures to a lower value.
 
 Modify the class `Fox`:
 
@@ -48,7 +48,7 @@ Modify the class `Experiment`:
 * *modify* `__init__()`
   * *modify* the header of the method to accept the new parameters `birthrate_rabbits` and `birthrate_foxes`
   * **add** the attributes `birthrate_rabbits` and `birthrate_foxes`
-* *modify* the methods `add_rabbits()` and `add_foxes()`. They should only add creatures as long as there are fewer creatures in the list `creatures` than `max_creatures`. Additionally, since we added `birthrate` to the `__init__` of our creatures, adjust the code that creates `Rabbit` and `Fox` instances such that it uses `birthrate_rabbits` and `birthrate_foxes` respectively.
+* *modify* the methods `add_rabbits()` and `add_foxes()`. Since we have added `birthrate` to the `__init__` of our creatures, adjust the code that creates `Rabbit` and `Fox` instances such that it uses the `birthrate_rabbits` or `birthrate_foxes` from the `Experiment` instead.
 * **add** the method `resolve_reproduction()`. This method checks all creatures. If a creature is marked for reproduction, add another creature of the same type to the experiment with a random location and angle. Make sure to unmark the reproducing creature for reproduction. Otherwise, the creature would start making endless copies.
 
     Note that it really needs to be a random new location. A creature cannot be spawned at a fixed location or the location of the parent! Try to reason why this is the case.
