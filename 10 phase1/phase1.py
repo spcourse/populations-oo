@@ -5,11 +5,16 @@ class Rabbit():
     # TODO define rabbit
 
 class Experiment():
-    def __init__(self, rabbit):
+    def __init__(self, iterations, rabbit):
+        self.iterations = iterations
         self.rabbit = rabbit
+        
         self.setup_plot()
 
-    def run(self, iterations):
+    def run(self, iterations=None):
+        if iterations == None:
+            iterations = self.iterations
+
         for i in range(iterations):
             self.step()
             self.draw()
@@ -32,7 +37,7 @@ class Experiment():
         self.ax1.axes.get_xaxis().set_visible(False)
         self.ax1.axes.get_yaxis().set_visible(False)
 
-
-my_rabbit = Rabbit(0.25, 0.75, math.pi/4)
-my_experiment = Experiment(my_rabbit)
-my_experiment.run(100)
+if __name__ == "__main__":
+    my_rabbit = Rabbit(0.25, 0.75, math.pi/4)
+    my_experiment = Experiment(100, my_rabbit)
+    my_experiment.run()
