@@ -37,4 +37,4 @@ The experiment is essentially a [multi-agent system](https://en.wikipedia.org/wi
 * The agents have specific personal behavior. For example, the foxes will get hungry.
 * The agents can interact: Foxes can eat rabbits and all creatures can reproduce.
 
-In phase 1 of the experiment, you'll set up the world and create a rabbit agent. Phases 1 - 5 are about creating the agents and having them move around. In phase 6 you'll implement the fox's specific behavior (hunger). Up to this point, there is no interaction between agents. This interaction you'll implement in phases 7 and 8.
+In phase 1 of the experiment, you'll set up the world and create a rabbit agent. Phases 1 - 5 are about creating the agents and having them move around. In phase 6 you'll implement the fox's specific behavior (hunger). Up to this point, there is no interaction between agents. This interaction you'll implement in phases 7 - 9. You will then proceed with gathering data on the dynamics of our model with different input parameters. Finally, you will propose and answer your own research question on the created model.
