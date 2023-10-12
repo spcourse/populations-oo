@@ -1,13 +1,11 @@
 ## Phase 5: Creatures
 
-Before you continue, **make a copy of your previous file and call it `phase5.py`**. Make sure to **continue editing in this new file**. 
+Before you continue, **make a copy of your previous file and call it `phase5.py`**. Make sure to **continue editing in this _new_ file**.
 
 ### Goal
-Before adding more complexity again in the next phase, let's now focus on making the code a bit nicer.
+Before we introduce additional complexity in the next phases, we should first improve the code to make it more elegant and organized. As you might have realized by now, in writing the code for the previous phase we generated a lot of duplicate code. Both the `Fox` and `Rabbit` classes share a lot of similarities. Not that surprising, given that a considerable portion of their code relates to their shared behavior of moving within our simulated environment.
 
-As you might have realized by now, for the previous phase you created a lot of duplicate code. The class `Fox` and `Rabbit` have a lot of overlap. Not that surprising, since a big part of the code for both classes has to do with them being creatures that walk around in this simulated world.
-
-So let's create a new abstraction: You're going to create a superclass called `Creature`. This class will contain the code for moving around that both `Fox` and `Rabbit` will inherit.
+So let's create a new abstraction: You're going to create a "superclass" called `Creature`. This class will contain the code for moving around that both `Fox` and `Rabbit` will inherit.
 
 The UML will look like this:
 
@@ -25,6 +23,8 @@ Create a new class called `Creature`. For this class:
   * **add** attribute `speed`. Creatures get the default speed $$0.01$$.
   * **add** attribute `color`. Creatures get the default color `'black'`.
 * **add** method `step()`. This method should only define the step based on the current angle, position and speed. It should not define the change of angle as that part is defined in the `step()` methods of the subclasses `Rabbit` and `Fox`
+
+> Think about why it is wise to set the default color of creatures to something unique!
 
 Modify the `Fox` class. You can remove a lot of code and inherit it from `Creature`.
 

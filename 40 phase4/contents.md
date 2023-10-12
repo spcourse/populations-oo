@@ -1,10 +1,10 @@
 ## Phase 4: Foxes
 
-Before you continue, **make a copy of your previous file and call it `phase4.py`**. Make sure to **continue editing in this new file**.
+Before you continue, **make a copy of your previous file and call it `phase4.py`**. Make sure to **continue editing in this _new_ file**.
 
 ### Goal
 
-Let's add the foxes to the experiment. For now, they're just going to walk around and not bother any rabbits. Foxes are in many ways similar to rabbits, they have a position and an angle and they move around. But their movements are slightly different. They go faster and they make slower turns. We will give foxes the color red. The new simulation will look like this:
+We are now going to introduce foxes into our experiment. For now, they will simply roam around without disturbing any rabbits. Just like rabbits, foxes have a position, angle, speed, and movement. However, their movements have distinct characteristics; they move faster and make more gradual turns. We'll distinguish foxes by giving them a red color. The new simulation will look like this:
 
 ![](phase4.gif){: width="60%"}
 
@@ -29,16 +29,18 @@ For the class `Fox`:
 For the class `Experiment`:
 
 * *change* attribute `rabbits` to `creatures`. This list will now contain both foxes and rabbits.
-* **add** `add_foxes(number_of_foxes)` this should add foxes to the list of creatures.
-* *modify* `__init__(iterations, number_of_rabbits, number_of_foxes)`. The method should now get an additional parameter for the number of foxes. And it should call the method `add_foxes()`.
 * *modify* `add_rabbits(number_of_rabbits)` to add the Rabbit instances to the list `creatures` instead of to `rabbits`.
 * *modify* `step()` to use the list `creatures` in stead of `rabbits`.
 * *modify* `draw()` to use the list `creatures` in stead of `rabbits`.
+* **add** `add_foxes(number_of_foxes)` this should add foxes to the list of creatures.
+* *modify* `__init__(iterations, number_of_rabbits, number_of_foxes)`. The method should now get an additional parameter for the number of foxes. And it should call the method `add_foxes()`.
 
 The experiment should spawn 10 rabbits and 3 foxes when called like this:
 
     my_experiment = Experiment(100, 10, 3)
     my_experiment.run()
+
+> Your code for `add_foxes()` will probably look very similar to the code in `add_rabbits()`. Can you think of a way to reduce duplicate code here?
 
 ### Test
 

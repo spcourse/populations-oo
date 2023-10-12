@@ -7,11 +7,11 @@ Let's start by having a single rabbit move over the screen. Like in the example 
 
 ![](phase1.gif){: width="60%"}
 
-The blue dot represents a rabbit and it follows a straight path at a certain angle. When it hits the border it turns 180 degrees around.
+The blue dot represents a rabbit and it follows a straight path at an angle. When it hits the border it turns 180 degrees around.
 
 ### Provided code
 
-The file `phase1.py` you downloaded contains an `Experiment` class. This class contains the main functionality for plotting and managing the experiment you're about to make. In this assignment, you will iteratively extend the functionality of this class and add other classes.
+The file `phase1.py` you downloaded contains the `Experiment` class. This class contains the main functionality for plotting and managing the experiment you're about to make. In this assignment, you will iteratively extend the functionality of this class and add other classes.
 
 The main code (below the `Experiment` class) creates a new rabbit with a specific position in the field ($$0.25$$, $$0.75$$) and a specific angle of movement ($$\pi/4$$). Then, a new experiment is created with a limit of 100 iterations and containing the created rabbit. And, in the last step, the experiment is run for $$100$$ iterations. All done by these three lines:
 
@@ -27,9 +27,9 @@ Running this program would show the moving blue dot (the rabbit), were it not th
 
 In this diagram, you see that an object of the class `Experiment` contains exactly one object of the class `Rabbit`. This is shown by the line that starts with the diamond shape (⬦---) and has the `1` written next to the `Rabbit` class. The diamond shape denotes aggregation (i.e., "contains") and the number denotes how many. So this translates to: "an experiment contains one rabbit".
 
-The UML diagram also shows the methods and attributes that the classes have.
+The UML diagram also shows the methods and attributes that the classes should have.
 
-For convenience, we've made everything that you have to implement **bold** and everything that needs to be modified *italic*.
+For convenience, we've made everything that you still have to implement **bold** and everything that needs to be modified *italic*.
 
 ### Specification
 So what you get is most of the class `Experiment`. This class contains the following:
@@ -46,12 +46,12 @@ For the class `Experiment` you still have to:
 You also have to implement the class `Rabbit`:
 
 * **add** class `Rabbit`
-* **add** method `__init__(pos_x, pos_y, angle)`: This method is automatically called when creating a new `Rabbit` object. When creating a new `Rabbit` object, you have to provide the position and angle. The method should assign those to the appropriate attributes. The init should also set the values for `speed` and `color`.
+* **add** method `__init__(pos_x, pos_y, angle)`: As for all classes, the `__init__` method is automatically called when creating a new `Rabbit` object. When creating a new `Rabbit` object, you have to provide the position and angle. The init method should assign the position and angle parameters to the appropriate attributes. The init method should also set the default values for the attributes `speed` and `color`.
   * **add** attribute `pos_x`, `pos_y`: The position of the rabbit. These are values between $$0$$ and $$1$$, where $$0, 0$$ is the left-bottom corner of the field and $$1, 1$$ is the right-upper corner.
   * **add** attribute `angle`: The angle at which the rabbit will move. An angle of $$0$$ makes the rabbit move along the x-axis and an angle of $$\pi /2$$ makes the rabbit move along the y-axis.
-  * **add** attribute `speed`: The speed at which the rabbit moves every step of the simulation ($$0.01$$ is a good value to start with).
+  * **add** attribute `speed`: The speed at which the rabbit moves every step of the simulation should be set to $$0.01$$.
   * **add** attribute `color`: The color for displaying the rabbit in the plot. Rabbits get the color `'blue'`.
-* **add** method `step()`: Run a single step of the simulation. This should update the position of the rabbit.
+* **add** method `step()`: Run a single step of the simulation for the rabbit; this should update the position of the rabbit.
     The rate of change ($$dx$$ and $$dy$$) is given by the formulas:
 
     $$\begin{align*}
@@ -68,7 +68,7 @@ You also have to implement the class `Rabbit`:
     \end{align*}
     $$
 
-    There is a very important (literal) edge case: When the rabbit reaches the edge of the field (its x or y location is smaller than 0 or bigger than 1), it should not change its position but turn around (i.e., increase the angle by $$\pi$$).
+    _There is a very important (literal) edge case: When the rabbit reaches the edge of the field (its x or y location is smaller than 0 or bigger than 1), it should not change its position but turn around (i.e., increase the angle by $$\pi$$)._
 
 
 > Note: None of the methods mentioned above and shown in the UML contain the `self` parameter, this is left out (as is conventional in UML diagrams) but you always have to add this parameter in your code. So when you create the method `__init__(pos_x, pos_y, angle)`, it should be defined as `def __init__(self, pos_x, pos_y, angle):`. The same goes for the method `step()`: `def step(self):`.
@@ -84,5 +84,7 @@ Here are some test cases you can use:
 * Set the angle to $$0$$. Does the rabbit follow the x-axis?
 * Set the angle to $$\pi$$ (`math.pi`). Does it go in the opposite direction?
 * Set the angle to $$1/2 \pi$$. Does the rabbit follow the y-axis?
-* Increase the speed to $$0.02$$. Does the rabbit seem to move twice as fast?
+* Increase the speed from $$0.01$$ to $$0.02$$. Does the rabbit seem to move twice as fast?
 * Set the speed of the rabbit to $$0$$. Does it stay still?
+
+> Remember to set all values back to their defaults after testing!

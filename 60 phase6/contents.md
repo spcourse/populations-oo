@@ -1,6 +1,6 @@
 ## Phase 6: Starving foxes
 
-Before you continue, **make a copy of your previous file and call it `phase6.py`**. Make sure to **continue editing in this new file**.
+Before you continue, **make a copy of your previous file and call it `phase6.py`**. Make sure to **continue editing in this _new_ file**.
 
 ### Goal
 

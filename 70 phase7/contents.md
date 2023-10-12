@@ -1,6 +1,6 @@
 ## Phase 7: Feeding foxes
 
-Before you continue, **make a copy of your previous file and call it `phase7.py`**. Make sure to **continue editing in this new file**.
+Before you continue, **make a copy of your previous file and call it `phase7.py`**. Make sure to **continue editing in this _new_ file**.
 
 ### Goal
 
