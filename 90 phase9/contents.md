@@ -1,6 +1,6 @@
 ## Phase 9: Controlling Growth
 
-Before you continue, **make a copy of your previous file and call it `phase9.py`**. Make sure to **continue editing in this new file**.
+Before you continue, **make a copy of your previous file and call it `phase9.py`**. Make sure to **continue editing in this _new_ file**.
 
 ### Goal
 
@@ -8,7 +8,7 @@ We would like to be able to use our model to run a whole suite of experiments us
 
 1. The model has potential for exponential population growth. In our model, reproduction is an exponential process. If more rabbits are born than the foxes can eat, the number rabbits will quickly increase and your program will become unresponsive. The easiest way to deal with that, for now, is by putting a cap on the total number of creatures.
 
-2. After running an experiment, we are interested in the number of rabbits and foxes remaining. We need to write a function that can be used to determine the number of `Rabbit` and `Fox` instances that are currently present in the `Experiment`'s `creatures` list. We will use this to evaluate the final results of our experiments.
+2. After running an experiment, we are interested in the number of rabbits and foxes remaining. We need to write a method that can be used to determine the number of `Rabbit` and `Fox` instances that are currently present in the `Experiment`'s `creatures` list. We will use this to evaluate the final results of our experiments.
 
 3. When we are doing a lot of experiments with different parameters, it is probably not necessary to view the visualization every single time. Visualizing the simulation is relatively slow, and ultimately we are only interested in the result of the simulation. For this reason, our last addition to the `Experiment` class is a boolean attribute `visualize`. When it is set to `True` we display our visualization, but by default we will set this value to `False`.
 

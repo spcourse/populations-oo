@@ -1,6 +1,6 @@
 ## Phase 7: Feeding foxes
 
-Before you continue, **make a copy of your previous file and call it `phase7.py`**. Make sure to **continue editing in this new file**.
+Before you continue, **make a copy of your previous file and call it `phase7.py`**. Make sure to **continue editing in this _new_ file**.
 
 ### Goal
 
@@ -25,7 +25,7 @@ Modify the class `Creature`:
 * **add** method `distance(other)`. This should return the [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance) between this creature and an `other` creature.
 * **add** method `interact(other)`. This method specifies what a creature should do when it interacts with another creature. For now, this method should not do anything, so you can leave the method empty with `pass`.
 
-> The `pass` statement is used as a placeholder for future code. When the `pass` statement is executed, nothing happens, but you avoid getting an indentation error that would be caused by leaving the line directly under a function definition empty.
+> The `pass` statement is used as a placeholder for future code. When the `pass` statement is executed, nothing happens, but you avoid getting an indentation error that would be caused by leaving the line directly under a function-/method-definition empty.
 
 Modify the class `Experiment`:
 

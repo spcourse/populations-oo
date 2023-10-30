@@ -8,7 +8,7 @@ The experiment above was configured with a birth rate of `0.15` for both rabbits
 
 Since our simulation is probabilistic and highly chaotic, we can not guarantee that the outcome of a single run is a good representation of the actual dynamics of the simulation. To get a good overview of the outcome of our experiments we will have to run each configuration of input parameters many times and analyze the results.
 
-In this phase of our experimentation pipeline we will write the code that runs experiments with varying input parameters multiple times. More specifically, we will run the simulation with different combinations for the birthrate of rabbits and foxes. The generated results for each experiment are then written to several `csv`-files in a `data/` folder for future analysis. Each `csv`-file contains the outcome of a multitude of runs of experiments done with the same input parameters.
+In this phase of our experimentation pipeline we will write the code that runs experiments multiple times, with varying input parameters. More specifically, we will do grid sampling for the variables `birthrate_rabbits` and `birthrate_foxes`; run the simulation many times with different combinations for the birthrate of rabbits and foxes. The generated results for each experiment are then written to several `csv`-files in a `data/` folder for future analysis. Each `csv`-file contains the outcome (the number of rabbits and foxes remaining) of a multitude of runs of experiments done with the same input parameters.
 
 ### Setup
 
@@ -26,7 +26,7 @@ The code provided imports the `Experiment` class from your final implementation 
 
 Write code that runs `N` experiments with the given experiment configurations in `experiment_kwargs`. `results` should be filled with tuples, where every tuple indicates the number of rabbits and foxes at the end of an experiment. You can use `Experiment`'s `count_creatures()` method to get each tuple.
 
-To test your code, try a lower value for `N` first, and look at the generated `csv`-file. Does it contain the values you expected?
+> To test your code, try a lower value for `N` first, and look at the generated `csv`-file. Does it contain the (number of) values you expected?
 
 **Then, repeat many experiment configurations `N` times**
 
@@ -34,6 +34,8 @@ Modify your code to run experiments with a range of configurations of `birthrate
 
 To do this, you can use a loop to iterate through the different values of birthrate for rabbits and foxes. For each combination of birthrates, you should run `N` experiments and export the results of each individual configuration using `export_result_to_csv()`.
 
-To test your code, try a lower value for `N` first again (something like `N=3`), and look at the `data` folder and the `csv`-files therein. If done properly, after some time, you should end up with 100 different `csv`-files containing `N` results each. Check the `csv`-files with low values for the birthrates: is the final number of rabbits and/or foxes in experiments sometimes 0? For experiments with high birthrates: is the final number of rabbits and/or foxes close to the value set for `max_creatures`?
+> To test your code, try a lower value for `N` first (something like `N=2`), and look at the `data` folder and the `csv`-files therein. If done properly, after some time, you should end up with 100 different `csv`-files containing `N` results each. Check the `csv`-files with low values for the birthrates: is the final number of rabbits and/or foxes in experiments sometimes 0? For experiments with high birthrates: is the final number of rabbits and/or foxes close to the value set for `max_creatures`?
 
-Finally, run your code with `N=100`. You should end up with 100 `csv`-files containing 100 data rows and a header each. This could take around 20 to 30 minutes.
+Finally, run your code with `N=100`. You should end up with 100 `csv`-files containing 100 data rows and a header each. This could take around 25 to 35 minutes.
+
+> It might be useful to print something indicating the progress every time a `csv`-file is written. This way you can extrapolate the time it will take to finish all 100 files. If this takes significantly longer -- or shorter -- than 25 to 35 minutes, it is probably time to debug! Keep in mind that experiments with lower birthrate take less time to run, as there are less creatures to simulate.

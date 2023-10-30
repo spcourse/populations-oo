@@ -12,7 +12,7 @@ $$\begin{align*}
 \end{align*}
 $$
 
-Where $x$ is the number of prey, $y$ is the number of predators, $t$ is time, and the other variables describe the interactions between species. Since this is a mathematical model and not the real world, the population of a species is allowed to be a floating point number.
+Where $$x$$ is the number of prey, $$y$$ is the number of predators, $$t$$ is time, and the other variables describe the interactions between species. Since this is a mathematical model and not the real world, the population of a species is allowed to be a floating point number.
 
 We're not doing mathematics, but computer programming. So what we will do is simulate the behavior of predators (foxes) and prey (rabbits). Of course, we will have to make a lot of simplifying assumptions to do so. In this assignment, you will iteratively build up the system. We'll start with something simple (a moving dot) and build it out to something more complex and interesting. The resulting model can be considered a [complex system](https://en.wikipedia.org/wiki/Complex_system#:~:text=Complex%20systems%20are%20systems%20whose,given%20system%20and%20its%20environment.). As such, you can rely on analyses that are common in that field such as [sensitivity analysis](https://en.wikipedia.org/wiki/Sensitivity_analysis).
 
