@@ -64,12 +64,12 @@ You also have to implement the class `Rabbit`:
 
     $$
     \begin{align*}
-    \textrm{pos}_\textrm{x} &= \textrm{pos}_{\textrm{x}} + dx \\
-    \textrm{pos_y} &= \textrm{pos_y} + dy
+    \textrm{pos\_x} &= \textrm{pos\_x} + dx \\
+    \textrm{pos\_y} &= \textrm{pos\_y} + dy
     \end{align*}
     $$
 
-    There is a very important (literal) edge case: When the rabbit reaches the edge of the field (its x or y location is smaller than 0 or bigger than 1), it should not change its position but turn around (i.e., increase the angle by $$\pi$$).
+    *There is a very important (literal) edge case: When the rabbit reaches the edge of the field (its x or y location is smaller than 0 or bigger than 1), it should not change its position but turn around (i.e., increase the angle by $$\pi$$).*
 
 
 > Note: None of the methods mentioned above and shown in the UML contain the `self` parameter, this is left out (as is conventional in UML diagrams) but you always have to add this parameter in your code. So when you create the method `__init__(pos_x, pos_y, angle)`, it should be defined as `def __init__(self, pos_x, pos_y, angle):`. The same goes for the method `step()`: `def step(self):`.
