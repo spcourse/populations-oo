@@ -52,7 +52,7 @@ Modify the class `Experiment`:
 * **add** the method `resolve_reproduction()`. This method checks all creatures. If a creature is marked for reproduction, add another creature of the same type to the experiment with a random location and angle. Make sure to unmark the reproducing creature for reproduction. Otherwise, the creature would start making endless copies.
 
     Note that it really needs to be a random new location. A creature cannot be spawned at a fixed location or the location of the parent! Try to reason why this is the case.
-* *modify* method `step()` to call `resolve_reproduction()`.
+* *modify* method `step()` to call `resolve_reproduction()`. Think about where you should call this function within each simulation step!
 
 ### Test
 
