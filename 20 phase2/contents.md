@@ -20,9 +20,9 @@ The fact that `Experiment` can now contain any number of rabbits is indicated by
 
 For this phase you have to *modify* the class `Experiment` as follows:
 
-* **add** method `add_rabbits(number_of_rabbits)` that creates a list of rabbits with random locations and angles and adds them to the attribute `rabbits`.
 * *modify* `__init__(iterations, number_of_rabbits)` to accept the new parameter `number_of_rabbits`.
-* *modify* attribute `rabbit` (one single instance of `Rabbit`) to `rabbits` (a `List`) and use `add_rabbits()` to create the correct number of `Rabbit` instances.
+* *modify* attribute `rabbit` (one single instance of `Rabbit`) to `rabbits` (a `List`)
+* **add** method `add_rabbits(number_of_rabbits)` that creates a list of rabbits that each have their own random locations and angles, and adds them to the attribute `rabbits`. Call this method in the the init method a to create the correct number of `Rabbit` instances.
 
     **From here on the `Rabbit` objects will be created *inside* the `Experiment` object.** We don't have to do this in the main code anymore as we did in Phase 1.
 
