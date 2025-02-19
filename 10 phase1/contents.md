@@ -88,4 +88,9 @@ Here are some test cases you can use:
 * Increase the speed from $$0.01$$ to $$0.02$$. Does the rabbit seem to move twice as fast?
 * Set the speed of the rabbit to $$0$$. Does it stay still?
 
+
+### Checkpy
+
+    checkpy phase1
+
 > Remember to set all values back to their defaults after testing!

@@ -25,3 +25,8 @@ Here are some useful test cases.
 * Do the rabbits seem to move around more naturally (similar to the example animation above)?
 * Set the probability to update to $$0\%$$ (so the angle should never change). Are the rabbits moving in a straight line?
 * Set the probability to update back to $$20\%$$ but alter the random angle change values to be between $$0$$ and $$0$$ (so the angle shouldn't change). Are the rabbits moving in a straight line? (If they are all moving exactly along the x-axis, something is wrong.)
+
+
+### Checkpy
+
+No checkpy for this phase.
