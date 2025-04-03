@@ -40,7 +40,7 @@ The experiment should spawn 10 rabbits and 3 foxes when called like this:
     my_experiment = Experiment(100, 10, 3)
     my_experiment.run()
 
-> Your code for `add_foxes()` will probably look very similar to the code in `add_rabbits()`. Can you think of a way to reduce duplicate code here?
+> Your code for `add_foxes()` will probably look very similar to the code in `add_rabbits()`. Can you think of a way to reduce duplicate code here? Don't make your change yet, but comment what you could do to improve your code! You can improve your design in phase 5.
 
 ### Test
 

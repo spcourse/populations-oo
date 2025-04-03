@@ -34,6 +34,8 @@ Modify the `Fox` class. You can remove a lot of code and inherit it from `Creatu
 
 Modify class `Rabbit` in the same way as `Fox`.
 
+> If you want, you can now also look into other ways to improve the design of your code!
+
 ### Test
 
 This was only a design change. If you did it correctly, it shouldn't have changed any of the behavior of the experiment. Test this by using some of the test cases from the previous phases. Pay special attention if the movement behavior of the fox is still independent of that of the rabbit. Can you, for example, change the speed of the foxes without changing the speed of the rabbits?
