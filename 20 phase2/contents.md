@@ -54,3 +54,7 @@ And, with 0 rabbits:
 
     my_experiment = Experiment(100, 0)
     my_experiment.run()
+
+### Checkpy
+
+    checkpy phase2

@@ -64,3 +64,10 @@ an experiment without any creature:
     my_experiment.run(100)
 
 Change the parameters of the fox and see if you have the expected behavior. What happens when you make the angle of change of the foxes 0? What happens when you set their speed to 0? Is this what you would expect?
+
+
+### Checkpy
+
+Checkpy checks the class-structure. It doesn't check if it actually runs the experiment correctly.
+
+    checkpy phase4
