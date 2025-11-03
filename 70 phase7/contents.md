@@ -4,7 +4,7 @@ Before you continue, **make a copy of your previous file and call it `phase7.py`
 
 ### Goal
 
-Now that the foxes can get hungry, they will have to be able to eat. The idea is that when a fox gets close enough to a rabbit, they can devour it. Upon being eaten, the rabbit will be removed from the experiment, and the fox will not be hungry anymore. In the example below you see that when a red dot comes close to a blue dot, the blue dot disappears. As a result, no longer disappear at iteration 80.
+Now that the foxes can get hungry, they will have to be able to eat. The idea is that when a fox gets close enough to a rabbit, they can devour it. Upon being eaten, the rabbit will be removed from the experiment, and the fox will not be hungry anymore. In the example below you see that when a red dot comes close to a blue dot, the blue dot disappears. As a result, foxes no longer disappear at iteration 80.
 
 ![](phase7.gif){: width="60%"}
 
